@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		764199DA22023B4300D64391 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764199D922023B4300D64391 /* AppDelegate.swift */; };
-		764199DC22023B4300D64391 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764199DB22023B4300D64391 /* ViewController.swift */; };
+		764199DC22023B4300D64391 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764199DB22023B4300D64391 /* HomeViewController.swift */; };
 		764199DF22023B4300D64391 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764199DD22023B4300D64391 /* Main.storyboard */; };
 		764199E122023B4400D64391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764199E022023B4400D64391 /* Assets.xcassets */; };
 		764199E422023B4400D64391 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764199E222023B4400D64391 /* LaunchScreen.storyboard */; };
+		764199EC22023F7900D64391 /* TourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764199EB22023F7900D64391 /* TourViewController.swift */; };
+		764199EE22023F8100D64391 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764199ED22023F8100D64391 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		764199D622023B4300D64391 /* Tourio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tourio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		764199D922023B4300D64391 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		764199DB22023B4300D64391 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		764199DB22023B4300D64391 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		764199DE22023B4300D64391 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		764199E022023B4400D64391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		764199E322023B4400D64391 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		764199E522023B4400D64391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		764199EB22023F7900D64391 /* TourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourViewController.swift; sourceTree = "<group>"; };
+		764199ED22023F8100D64391 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				764199D922023B4300D64391 /* AppDelegate.swift */,
-				764199DB22023B4300D64391 /* ViewController.swift */,
 				764199DD22023B4300D64391 /* Main.storyboard */,
+				764199DB22023B4300D64391 /* HomeViewController.swift */,
+				764199EB22023F7900D64391 /* TourViewController.swift */,
+				764199ED22023F8100D64391 /* ProfileViewController.swift */,
 				764199E022023B4400D64391 /* Assets.xcassets */,
 				764199E222023B4400D64391 /* LaunchScreen.storyboard */,
 				764199E522023B4400D64391 /* Info.plist */,
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				764199DC22023B4300D64391 /* ViewController.swift in Sources */,
+				764199DC22023B4300D64391 /* HomeViewController.swift in Sources */,
+				764199EC22023F7900D64391 /* TourViewController.swift in Sources */,
+				764199EE22023F8100D64391 /* ProfileViewController.swift in Sources */,
 				764199DA22023B4300D64391 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
