@@ -17,14 +17,165 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="1Ls-4g-gVm">
+                                <rect key="frame" x="20" y="131" width="280" height="368"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjL-pE-fm8">
+                                        <rect key="frame" x="102.5" y="0.0" width="75" height="81.5"/>
+                                        <state key="normal" title="Join a Tour"/>
+                                        <connections>
+                                            <segue destination="Emq-BO-dg7" kind="show" identifier="JoinTourSegue" id="S7o-Bu-L8W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKw-4f-etC">
+                                        <rect key="frame" x="93.5" y="143.5" width="93" height="81"/>
+                                        <state key="normal" title="Create a Tour"/>
+                                        <connections>
+                                            <segue destination="WvM-dl-60n" kind="show" identifier="CreateTourSegue" id="ZYP-eC-62I"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPE-Xg-BhX">
+                                        <rect key="frame" x="108.5" y="286.5" width="63" height="81.5"/>
+                                        <state key="normal" title="Quit Tour"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1Ls-4g-gVm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="0Um-Cd-3vc"/>
+                            <constraint firstItem="1Ls-4g-gVm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="81Q-HE-dhZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Ls-4g-gVm" secondAttribute="bottom" constant="20" id="8kw-MB-8aG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Ls-4g-gVm" secondAttribute="trailing" constant="20" id="K0m-P1-8yP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="DBd-1V-OXz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-386" y="1057"/>
+            <point key="canvasLocation" x="-1474" y="1068"/>
+        </scene>
+        <!--Join a Tour-->
+        <scene sceneID="DPK-8w-hw3">
+            <objects>
+                <viewController id="Emq-BO-dg7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UjI-Vq-osD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OQ2-ni-Uid">
+                                <rect key="frame" x="20" y="84" width="230" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgi-V3-sbA">
+                                <rect key="frame" x="270" y="84" width="30" height="30"/>
+                                <state key="normal" title="Join"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearby Tours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVz-7R-2se">
+                                <rect key="frame" x="20" y="134" width="137" height="27"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZjR-eP-Xbx" firstAttribute="trailing" secondItem="Dgi-V3-sbA" secondAttribute="trailing" constant="20" id="0ff-Os-lCL"/>
+                            <constraint firstItem="Dgi-V3-sbA" firstAttribute="leading" secondItem="OQ2-ni-Uid" secondAttribute="trailing" constant="20" id="4NJ-DR-hMf"/>
+                            <constraint firstItem="YVz-7R-2se" firstAttribute="leading" secondItem="ZjR-eP-Xbx" secondAttribute="leading" constant="20" id="7MV-iS-ezk"/>
+                            <constraint firstItem="YVz-7R-2se" firstAttribute="top" secondItem="OQ2-ni-Uid" secondAttribute="bottom" constant="20" id="MpH-ba-Nba"/>
+                            <constraint firstItem="ZjR-eP-Xbx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YVz-7R-2se" secondAttribute="trailing" symbolic="YES" id="h6O-ir-EDH"/>
+                            <constraint firstItem="OQ2-ni-Uid" firstAttribute="top" secondItem="ZjR-eP-Xbx" secondAttribute="top" constant="20" id="nZB-GL-UBY"/>
+                            <constraint firstItem="OQ2-ni-Uid" firstAttribute="leading" secondItem="ZjR-eP-Xbx" secondAttribute="leading" constant="20" id="nix-j4-6oJ"/>
+                            <constraint firstItem="Dgi-V3-sbA" firstAttribute="top" secondItem="ZjR-eP-Xbx" secondAttribute="top" constant="20" id="zEx-kZ-qni"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZjR-eP-Xbx"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Join a Tour" largeTitleDisplayMode="never" id="Yq8-xC-PZx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YMv-G5-E2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2205" y="1848"/>
+        </scene>
+        <!--Create a Tour-->
+        <scene sceneID="i4p-MW-AQi">
+            <objects>
+                <viewController id="WvM-dl-60n" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vYm-7q-G2X">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Q5K-Js-Sys"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create a Tour" largeTitleDisplayMode="never" id="jhj-vc-heC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVG-KH-mwm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-789" y="1848"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rIs-fC-Pu3">
+            <objects>
+                <viewController id="dlM-if-4Eo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yaY-oe-qU5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcU-qy-9L8">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Tour Details" largeTitleDisplayMode="never" id="ZSL-6J-HSA"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pcU-qy-9L8" firstAttribute="leading" secondItem="rYT-u7-NTb" secondAttribute="leading" id="WXS-dz-HOV"/>
+                            <constraint firstItem="pcU-qy-9L8" firstAttribute="top" secondItem="rYT-u7-NTb" secondAttribute="top" id="eRy-th-elW"/>
+                            <constraint firstItem="pcU-qy-9L8" firstAttribute="trailing" secondItem="rYT-u7-NTb" secondAttribute="trailing" id="kMG-rR-V5b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rYT-u7-NTb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXj-1V-ihB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1502" y="2301"/>
+        </scene>
+        <!--[Point Details]-->
+        <scene sceneID="Fb3-ZU-1Ge">
+            <objects>
+                <viewController id="Ns1-dW-VT0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fYD-Pw-HAE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="U7e-hh-vyB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="[Point Details]" largeTitleDisplayMode="never" id="fTk-UO-o0Z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r7l-7a-UED" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2" y="1848"/>
+        </scene>
+        <!--Point List-->
+        <scene sceneID="VSv-kL-5Oe">
+            <objects>
+                <viewController id="sfV-wd-cK4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bzn-3n-YUO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="BJm-uc-rIl"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Point List" largeTitleDisplayMode="never" id="Lyl-Wh-YIH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1h3-bq-NVT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="765" y="1848"/>
         </scene>
         <!--Tour-->
         <scene sceneID="GuD-7o-XRJ">
@@ -33,14 +184,34 @@
                     <view key="view" contentMode="scaleToFill" id="RQs-Sw-7td">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dDn-ga-UWG">
+                                <rect key="frame" x="0.0" y="111" width="320" height="408"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WmB-7z-VZ2" firstAttribute="bottom" secondItem="dDn-ga-UWG" secondAttribute="bottom" id="CIS-4C-Dg1"/>
+                            <constraint firstItem="WmB-7z-VZ2" firstAttribute="trailing" secondItem="dDn-ga-UWG" secondAttribute="trailing" id="G6t-Xg-aXs"/>
+                            <constraint firstItem="dDn-ga-UWG" firstAttribute="top" secondItem="WmB-7z-VZ2" secondAttribute="top" id="KiD-M9-sW4"/>
+                            <constraint firstItem="dDn-ga-UWG" firstAttribute="leading" secondItem="WmB-7z-VZ2" secondAttribute="leading" id="hEs-Ue-NA4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WmB-7z-VZ2"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Tour" largeTitleDisplayMode="always" id="MPG-6x-2zK"/>
+                    <navigationItem key="navigationItem" title="Tour" largeTitleDisplayMode="always" id="MPG-6x-2zK">
+                        <barButtonItem key="rightBarButtonItem" title="Point List" id="ZVy-iw-Qlj">
+                            <connections>
+                                <segue destination="sfV-wd-cK4" kind="show" identifier="PointListSegue" id="lrt-u0-83M"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Ns1-dW-VT0" kind="show" identifier="PointDetailsSegue" id="rjV-G6-OIG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cqw-Bs-vDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="407" y="1058"/>
+            <point key="canvasLocation" x="293" y="1068"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Hfi-x1-QU0">
@@ -56,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mpl-pM-f2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1236" y="1057"/>
+            <point key="canvasLocation" x="2719" y="1016"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4MN-0A-ADY">
@@ -64,6 +235,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="iTg-JJ-25S" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RT6-08-FRe">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -94,7 +266,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6kG-1u-6sC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-386.25" y="300"/>
+            <point key="canvasLocation" x="-1474" y="330"/>
         </scene>
         <!--Tour-->
         <scene sceneID="oFc-lD-FgI">
@@ -113,7 +285,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vea-Mk-kdw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="407" y="300"/>
+            <point key="canvasLocation" x="293" y="330"/>
         </scene>
         <!--Profile-->
         <scene sceneID="rPd-8J-2wG">
@@ -132,7 +304,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ct3-Qh-h9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1236" y="300"/>
+            <point key="canvasLocation" x="2719" y="330"/>
         </scene>
     </scenes>
     <resources>

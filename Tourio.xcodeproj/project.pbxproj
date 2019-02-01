@@ -14,6 +14,13 @@
 		764199E422023B4400D64391 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764199E222023B4400D64391 /* LaunchScreen.storyboard */; };
 		764199EC22023F7900D64391 /* TourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764199EB22023F7900D64391 /* TourViewController.swift */; };
 		764199EE22023F8100D64391 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764199ED22023F8100D64391 /* ProfileViewController.swift */; };
+		76FEB5D32204E290006D48D6 /* TourPointListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEB5CC2204E28F006D48D6 /* TourPointListingView.swift */; };
+		76FEB5D42204E290006D48D6 /* TourPointCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEB5CD2204E290006D48D6 /* TourPointCollection.swift */; };
+		76FEB5D52204E290006D48D6 /* TourPointContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEB5CE2204E290006D48D6 /* TourPointContent.swift */; };
+		76FEB5D62204E290006D48D6 /* TourListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEB5CF2204E290006D48D6 /* TourListingView.swift */; };
+		76FEB5D72204E290006D48D6 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEB5D02204E290006D48D6 /* Tour.swift */; };
+		76FEB5D82204E290006D48D6 /* MapPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEB5D12204E290006D48D6 /* MapPointView.swift */; };
+		76FEB5D92204E290006D48D6 /* TourPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FEB5D22204E290006D48D6 /* TourPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,13 @@
 		764199E522023B4400D64391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		764199EB22023F7900D64391 /* TourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourViewController.swift; sourceTree = "<group>"; };
 		764199ED22023F8100D64391 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		76FEB5CC2204E28F006D48D6 /* TourPointListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourPointListingView.swift; sourceTree = "<group>"; };
+		76FEB5CD2204E290006D48D6 /* TourPointCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourPointCollection.swift; sourceTree = "<group>"; };
+		76FEB5CE2204E290006D48D6 /* TourPointContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourPointContent.swift; sourceTree = "<group>"; };
+		76FEB5CF2204E290006D48D6 /* TourListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourListingView.swift; sourceTree = "<group>"; };
+		76FEB5D02204E290006D48D6 /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
+		76FEB5D12204E290006D48D6 /* MapPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPointView.swift; sourceTree = "<group>"; };
+		76FEB5D22204E290006D48D6 /* TourPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,13 @@
 			children = (
 				764199D922023B4300D64391 /* AppDelegate.swift */,
 				764199DD22023B4300D64391 /* Main.storyboard */,
+				76FEB5D12204E290006D48D6 /* MapPointView.swift */,
+				76FEB5D02204E290006D48D6 /* Tour.swift */,
+				76FEB5CF2204E290006D48D6 /* TourListingView.swift */,
+				76FEB5D22204E290006D48D6 /* TourPoint.swift */,
+				76FEB5CD2204E290006D48D6 /* TourPointCollection.swift */,
+				76FEB5CE2204E290006D48D6 /* TourPointContent.swift */,
+				76FEB5CC2204E28F006D48D6 /* TourPointListingView.swift */,
 				764199DB22023B4300D64391 /* HomeViewController.swift */,
 				764199EB22023F7900D64391 /* TourViewController.swift */,
 				764199ED22023F8100D64391 /* ProfileViewController.swift */,
@@ -141,10 +162,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76FEB5D42204E290006D48D6 /* TourPointCollection.swift in Sources */,
 				764199DC22023B4300D64391 /* HomeViewController.swift in Sources */,
+				76FEB5D82204E290006D48D6 /* MapPointView.swift in Sources */,
 				764199EC22023F7900D64391 /* TourViewController.swift in Sources */,
 				764199EE22023F8100D64391 /* ProfileViewController.swift in Sources */,
+				76FEB5D32204E290006D48D6 /* TourPointListingView.swift in Sources */,
+				76FEB5D52204E290006D48D6 /* TourPointContent.swift in Sources */,
+				76FEB5D72204E290006D48D6 /* Tour.swift in Sources */,
 				764199DA22023B4300D64391 /* AppDelegate.swift in Sources */,
+				76FEB5D62204E290006D48D6 /* TourListingView.swift in Sources */,
+				76FEB5D92204E290006D48D6 /* TourPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
