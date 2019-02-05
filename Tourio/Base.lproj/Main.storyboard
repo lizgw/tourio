@@ -52,6 +52,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="DBd-1V-OXz"/>
+                    <connections>
+                        <outlet property="quitTourButton" destination="QPE-Xg-BhX" id="kuF-UH-Vuj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,7 +63,7 @@
         <!--Join a Tour-->
         <scene sceneID="DPK-8w-hw3">
             <objects>
-                <viewController id="Emq-BO-dg7" sceneMemberID="viewController">
+                <viewController id="Emq-BO-dg7" customClass="JoinTourViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UjI-Vq-osD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,7 +107,7 @@
         <!--Create a Tour-->
         <scene sceneID="i4p-MW-AQi">
             <objects>
-                <viewController id="WvM-dl-60n" sceneMemberID="viewController">
+                <viewController id="WvM-dl-60n" customClass="CreateTourViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vYm-7q-G2X">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="-789" y="1848"/>
         </scene>
-        <!--View Controller-->
+        <!--Tour Details View Controller-->
         <scene sceneID="rIs-fC-Pu3">
             <objects>
-                <viewController id="dlM-if-4Eo" sceneMemberID="viewController">
+                <viewController id="dlM-if-4Eo" customClass="TourDetailsViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yaY-oe-qU5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,7 +151,7 @@
         <!--[Point Details]-->
         <scene sceneID="Fb3-ZU-1Ge">
             <objects>
-                <viewController id="Ns1-dW-VT0" sceneMemberID="viewController">
+                <viewController id="Ns1-dW-VT0" customClass="PointDetailsViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fYD-Pw-HAE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,7 +167,7 @@
         <!--Point List-->
         <scene sceneID="VSv-kL-5Oe">
             <objects>
-                <viewController id="sfV-wd-cK4" sceneMemberID="viewController">
+                <viewController id="sfV-wd-cK4" customClass="PointListViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bzn-3n-YUO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
