@@ -106,8 +106,7 @@
 				7678B52A220A29A800E693D3 /* TourDetailsViewController.swift */,
 				7678B525220A29A800E693D3 /* TourViewController.swift */,
 			);
-			name = ViewControllers;
-			path = "New Group";
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		76D8ED7B220CBB5800BBCB2C /* Data */ = {
