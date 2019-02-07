@@ -11,9 +11,21 @@
 		764199DF22023B4300D64391 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764199DD22023B4300D64391 /* Main.storyboard */; };
 		764199E122023B4400D64391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764199E022023B4400D64391 /* Assets.xcassets */; };
 		764199E422023B4400D64391 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764199E222023B4400D64391 /* LaunchScreen.storyboard */; };
-		7678B51F220A247700E693D3 /* ViewControllers in Resources */ = {isa = PBXBuildFile; fileRef = 7678B51C220A247700E693D3 /* ViewControllers */; };
-		7678B520220A247700E693D3 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 7678B51D220A247700E693D3 /* Data */; };
-		7678B521220A247700E693D3 /* View in Resources */ = {isa = PBXBuildFile; fileRef = 7678B51E220A247700E693D3 /* View */; };
+		7678B531220A29A800E693D3 /* TourPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B522220A29A700E693D3 /* TourPoint.swift */; };
+		7678B532220A29A800E693D3 /* JoinTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B523220A29A700E693D3 /* JoinTourViewController.swift */; };
+		7678B533220A29A800E693D3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B524220A29A800E693D3 /* ProfileViewController.swift */; };
+		7678B534220A29A800E693D3 /* TourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B525220A29A800E693D3 /* TourViewController.swift */; };
+		7678B535220A29A800E693D3 /* PointDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B526220A29A800E693D3 /* PointDetailsViewController.swift */; };
+		7678B536220A29A800E693D3 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B527220A29A800E693D3 /* Tour.swift */; };
+		7678B537220A29A800E693D3 /* TourPointListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B528220A29A800E693D3 /* TourPointListingView.swift */; };
+		7678B538220A29A800E693D3 /* PointListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B529220A29A800E693D3 /* PointListViewController.swift */; };
+		7678B539220A29A800E693D3 /* TourDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B52A220A29A800E693D3 /* TourDetailsViewController.swift */; };
+		7678B53A220A29A800E693D3 /* TourListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B52B220A29A800E693D3 /* TourListingView.swift */; };
+		7678B53B220A29A800E693D3 /* TourPointContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B52C220A29A800E693D3 /* TourPointContent.swift */; };
+		7678B53C220A29A800E693D3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B52D220A29A800E693D3 /* HomeViewController.swift */; };
+		7678B53D220A29A800E693D3 /* CreateTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B52E220A29A800E693D3 /* CreateTourViewController.swift */; };
+		7678B53E220A29A800E693D3 /* MapPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B52F220A29A800E693D3 /* MapPointView.swift */; };
+		7678B53F220A29A800E693D3 /* TourPointCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B530220A29A800E693D3 /* TourPointCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +35,21 @@
 		764199E022023B4400D64391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		764199E322023B4400D64391 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		764199E522023B4400D64391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7678B51C220A247700E693D3 /* ViewControllers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ViewControllers; sourceTree = "<group>"; };
-		7678B51D220A247700E693D3 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
-		7678B51E220A247700E693D3 /* View */ = {isa = PBXFileReference; lastKnownFileType = folder; path = View; sourceTree = "<group>"; };
+		7678B522220A29A700E693D3 /* TourPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourPoint.swift; sourceTree = "<group>"; };
+		7678B523220A29A700E693D3 /* JoinTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoinTourViewController.swift; path = ../ViewControllers/JoinTourViewController.swift; sourceTree = "<group>"; };
+		7678B524220A29A800E693D3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ViewControllers/ProfileViewController.swift; sourceTree = "<group>"; };
+		7678B525220A29A800E693D3 /* TourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TourViewController.swift; path = ../ViewControllers/TourViewController.swift; sourceTree = "<group>"; };
+		7678B526220A29A800E693D3 /* PointDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PointDetailsViewController.swift; path = ../ViewControllers/PointDetailsViewController.swift; sourceTree = "<group>"; };
+		7678B527220A29A800E693D3 /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
+		7678B528220A29A800E693D3 /* TourPointListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourPointListingView.swift; sourceTree = "<group>"; };
+		7678B529220A29A800E693D3 /* PointListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PointListViewController.swift; path = ../ViewControllers/PointListViewController.swift; sourceTree = "<group>"; };
+		7678B52A220A29A800E693D3 /* TourDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TourDetailsViewController.swift; path = ../ViewControllers/TourDetailsViewController.swift; sourceTree = "<group>"; };
+		7678B52B220A29A800E693D3 /* TourListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourListingView.swift; sourceTree = "<group>"; };
+		7678B52C220A29A800E693D3 /* TourPointContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourPointContent.swift; sourceTree = "<group>"; };
+		7678B52D220A29A800E693D3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
+		7678B52E220A29A800E693D3 /* CreateTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTourViewController.swift; path = ../ViewControllers/CreateTourViewController.swift; sourceTree = "<group>"; };
+		7678B52F220A29A800E693D3 /* MapPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPointView.swift; sourceTree = "<group>"; };
+		7678B530220A29A800E693D3 /* TourPointCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourPointCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +82,53 @@
 		764199D822023B4300D64391 /* Tourio */ = {
 			isa = PBXGroup;
 			children = (
+				76D8ED7A220CBAE900BBCB2C /* ViewControllers */,
+				76D8ED7B220CBB5800BBCB2C /* Data */,
+				76D8ED7C220CBB8100BBCB2C /* Views */,
 				764199D922023B4300D64391 /* AppDelegate.swift */,
 				764199DD22023B4300D64391 /* Main.storyboard */,
-				7678B51D220A247700E693D3 /* Data */,
-				7678B51E220A247700E693D3 /* View */,
-				7678B51C220A247700E693D3 /* ViewControllers */,
 				764199E022023B4400D64391 /* Assets.xcassets */,
 				764199E222023B4400D64391 /* LaunchScreen.storyboard */,
 				764199E522023B4400D64391 /* Info.plist */,
 			);
 			path = Tourio;
+			sourceTree = "<group>";
+		};
+		76D8ED7A220CBAE900BBCB2C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7678B52E220A29A800E693D3 /* CreateTourViewController.swift */,
+				7678B52D220A29A800E693D3 /* HomeViewController.swift */,
+				7678B523220A29A700E693D3 /* JoinTourViewController.swift */,
+				7678B526220A29A800E693D3 /* PointDetailsViewController.swift */,
+				7678B529220A29A800E693D3 /* PointListViewController.swift */,
+				7678B524220A29A800E693D3 /* ProfileViewController.swift */,
+				7678B52A220A29A800E693D3 /* TourDetailsViewController.swift */,
+				7678B525220A29A800E693D3 /* TourViewController.swift */,
+			);
+			name = ViewControllers;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		76D8ED7B220CBB5800BBCB2C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7678B52C220A29A800E693D3 /* TourPointContent.swift */,
+				7678B527220A29A800E693D3 /* Tour.swift */,
+				7678B522220A29A700E693D3 /* TourPoint.swift */,
+				7678B530220A29A800E693D3 /* TourPointCollection.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		76D8ED7C220CBB8100BBCB2C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7678B528220A29A800E693D3 /* TourPointListingView.swift */,
+				7678B52F220A29A800E693D3 /* MapPointView.swift */,
+				7678B52B220A29A800E693D3 /* TourListingView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,11 +190,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				764199E422023B4400D64391 /* LaunchScreen.storyboard in Resources */,
-				7678B51F220A247700E693D3 /* ViewControllers in Resources */,
-				7678B520220A247700E693D3 /* Data in Resources */,
 				764199E122023B4400D64391 /* Assets.xcassets in Resources */,
 				764199DF22023B4300D64391 /* Main.storyboard in Resources */,
-				7678B521220A247700E693D3 /* View in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +202,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7678B53B220A29A800E693D3 /* TourPointContent.swift in Sources */,
+				7678B536220A29A800E693D3 /* Tour.swift in Sources */,
+				7678B53D220A29A800E693D3 /* CreateTourViewController.swift in Sources */,
+				7678B539220A29A800E693D3 /* TourDetailsViewController.swift in Sources */,
+				7678B53F220A29A800E693D3 /* TourPointCollection.swift in Sources */,
+				7678B534220A29A800E693D3 /* TourViewController.swift in Sources */,
+				7678B53A220A29A800E693D3 /* TourListingView.swift in Sources */,
+				7678B538220A29A800E693D3 /* PointListViewController.swift in Sources */,
+				7678B53E220A29A800E693D3 /* MapPointView.swift in Sources */,
+				7678B531220A29A800E693D3 /* TourPoint.swift in Sources */,
 				764199DA22023B4300D64391 /* AppDelegate.swift in Sources */,
+				7678B533220A29A800E693D3 /* ProfileViewController.swift in Sources */,
+				7678B535220A29A800E693D3 /* PointDetailsViewController.swift in Sources */,
+				7678B537220A29A800E693D3 /* TourPointListingView.swift in Sources */,
+				7678B53C220A29A800E693D3 /* HomeViewController.swift in Sources */,
+				7678B532220A29A800E693D3 /* JoinTourViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
