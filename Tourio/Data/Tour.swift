@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Tour {
     
@@ -55,8 +56,15 @@ class Tour {
     
     // returns a TourListingView representing this Tour
     func getTourListingView() -> TourListingView {
-        // TODO
-        return TourListingView()
+        // init a TourListingView
+        let tourView = TourListingView(frame: CGRect.zero)
+        
+        // set all the values
+        tourView.createdBy = createdBy
+        tourView.tourName = name
+        tourView.distanceAway = distanceAway
+        
+        return tourView
     }
     
 }

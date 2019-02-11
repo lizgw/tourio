@@ -51,7 +51,7 @@ import UIKit
         
         // create icon image
         tourIcon = UIImageView()
-        tourIcon.image = UIImage(named: "UserIcon", in: nil, compatibleWith: nil)
+        tourIcon.image = UIImage(named: "UserIcon", in: nil, compatibleWith: nil) // TODO: use actual image
         // add constraints
         // disable auto constraints
         tourIcon.translatesAutoresizingMaskIntoConstraints = false

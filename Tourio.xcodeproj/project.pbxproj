@@ -82,12 +82,12 @@
 		764199D822023B4300D64391 /* Tourio */ = {
 			isa = PBXGroup;
 			children = (
+				764199DD22023B4300D64391 /* Main.storyboard */,
 				76D8ED7A220CBAE900BBCB2C /* ViewControllers */,
 				76D8ED7B220CBB5800BBCB2C /* Data */,
 				76D8ED7C220CBB8100BBCB2C /* Views */,
-				764199D922023B4300D64391 /* AppDelegate.swift */,
-				764199DD22023B4300D64391 /* Main.storyboard */,
 				764199E022023B4400D64391 /* Assets.xcassets */,
+				764199D922023B4300D64391 /* AppDelegate.swift */,
 				764199E222023B4400D64391 /* LaunchScreen.storyboard */,
 				764199E522023B4400D64391 /* Info.plist */,
 			);
@@ -123,9 +123,9 @@
 		76D8ED7C220CBB8100BBCB2C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7678B52B220A29A800E693D3 /* TourListingView.swift */,
 				7678B528220A29A800E693D3 /* TourPointListingView.swift */,
 				7678B52F220A29A800E693D3 /* MapPointView.swift */,
-				7678B52B220A29A800E693D3 /* TourListingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
