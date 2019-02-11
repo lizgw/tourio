@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol TourListingViewProtocol {
+    func tourListingViewTapped(tourName: String)
+}
+
 @IBDesignable class TourListingView : UIStackView {
     
     // MARK: properties
@@ -26,6 +30,8 @@ import UIKit
             detailsLabel.text = "by \(createdBy) - \(distanceAway) mi away"
         }
     }
+    
+    var delegate: TourListingViewProtocol!
     
     var tourIcon : UIImageView!
     var textStackView : UIStackView!
@@ -84,12 +90,8 @@ import UIKit
     }
     
     @objc func tourTapped(_ sender : UITapGestureRecognizer) {
-        print("\(tourName) was tapped")
-        
-        // TODO: switch to the map view???
-        //let mapVC = TourMapViewController()
-        
-        
+        // let the view controller deal with it
+        delegate.tourListingViewTapped(tourName: tourName)
     }
     
 }

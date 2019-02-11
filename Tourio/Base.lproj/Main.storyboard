@@ -115,6 +115,7 @@
                     <connections>
                         <outlet property="nearbyStackView" destination="VGO-sA-Tnn" id="4Rc-B1-deI"/>
                         <outlet property="tourCodeTextField" destination="OQ2-ni-Uid" id="vku-CM-7aC"/>
+                        <segue destination="dlM-if-4Eo" kind="show" identifier="JoinToDetailsSegue" id="rox-vT-Ahf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YMv-G5-E2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -137,29 +138,17 @@
             </objects>
             <point key="canvasLocation" x="-789" y="1848"/>
         </scene>
-        <!--Tour Details View Controller-->
+        <!--Tour Details-->
         <scene sceneID="rIs-fC-Pu3">
             <objects>
                 <viewController id="dlM-if-4Eo" customClass="TourDetailsViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yaY-oe-qU5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcU-qy-9L8">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Tour Details" largeTitleDisplayMode="never" id="ZSL-6J-HSA"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="pcU-qy-9L8" firstAttribute="leading" secondItem="rYT-u7-NTb" secondAttribute="leading" id="WXS-dz-HOV"/>
-                            <constraint firstItem="pcU-qy-9L8" firstAttribute="top" secondItem="rYT-u7-NTb" secondAttribute="top" id="eRy-th-elW"/>
-                            <constraint firstItem="pcU-qy-9L8" firstAttribute="trailing" secondItem="rYT-u7-NTb" secondAttribute="trailing" id="kMG-rR-V5b"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rYT-u7-NTb"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Tour Details" id="zkO-KZ-sHe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXj-1V-ihB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

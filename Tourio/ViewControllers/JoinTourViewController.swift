@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JoinTourViewController: UIViewController {
+class JoinTourViewController: UIViewController, TourListingViewProtocol {
 
     @IBOutlet weak var tourCodeTextField: UITextField!
     @IBOutlet weak var nearbyStackView: UIStackView!
@@ -18,19 +18,30 @@ class JoinTourViewController: UIViewController {
 
         // setup the stack view
         nearbyStackView.spacing = 5
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+        
+        // get nearby tours - TODO: move this to a different place with network requests
         populateNearbyToursList()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
     func populateNearbyToursList() {
+        // clear out the stack view to find the new nearby views
+        for subview in nearbyStackView.arrangedSubviews {
+            nearbyStackView.removeArrangedSubview(subview)
+        }
+        print("cleared out the view: \(nearbyStackView.arrangedSubviews)")
+        
         // find tour objects and put them in a list
         let nearbyTours: [Tour] = getNearbyTours()
         
         // for each tour, make a TourListingView and add it to the stack view
         for tour in nearbyTours {
-            nearbyStackView.addArrangedSubview(tour.getTourListingView())
+            let tourView = tour.getTourListingView()
+            tourView.delegate = self
+            nearbyStackView.addArrangedSubview(tourView)
         }
     }
     
@@ -57,6 +68,16 @@ class JoinTourViewController: UIViewController {
             print("joined tour \(tourCode)")
         } else {
             print("Enter a tour code!")
+        }
+    }
+    
+    func tourListingViewTapped(tourName: String) {
+        performSegue(withIdentifier: "JoinToDetailsSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "JoinToDetailsSegue") {
+            print("going to the details segue")
         }
     }
 
