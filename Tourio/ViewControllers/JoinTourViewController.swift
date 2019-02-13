@@ -48,8 +48,8 @@ class JoinTourViewController: UIViewController, TourListingViewProtocol {
     func getNearbyTours() -> [Tour] {
         var tourList = [Tour]()
         
-        // TEMPORARY: make 5 random tours
-        for _ in 1...5
+        // TEMPORARY: make some random tours
+        for _ in 1...6
         {
             let randUsername = "user\(arc4random_uniform(100))"
             let isOrdered: Bool = arc4random_uniform(2) == 0 ? true : false

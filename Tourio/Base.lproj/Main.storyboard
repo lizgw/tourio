@@ -105,8 +105,8 @@
                             <constraint firstItem="ZjR-eP-Xbx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YVz-7R-2se" secondAttribute="trailing" symbolic="YES" id="h6O-ir-EDH"/>
                             <constraint firstItem="OQ2-ni-Uid" firstAttribute="top" secondItem="ZjR-eP-Xbx" secondAttribute="top" constant="20" id="nZB-GL-UBY"/>
                             <constraint firstItem="OQ2-ni-Uid" firstAttribute="leading" secondItem="ZjR-eP-Xbx" secondAttribute="leading" constant="20" id="nix-j4-6oJ"/>
-                            <constraint firstItem="ZjR-eP-Xbx" firstAttribute="trailing" secondItem="VGO-sA-Tnn" secondAttribute="trailing" constant="20" id="qZo-lO-dcG"/>
                             <constraint firstItem="ZjR-eP-Xbx" firstAttribute="bottom" secondItem="VGO-sA-Tnn" secondAttribute="bottom" constant="20" id="qxK-RW-KIZ"/>
+                            <constraint firstItem="ZjR-eP-Xbx" firstAttribute="trailing" secondItem="VGO-sA-Tnn" secondAttribute="trailing" constant="20" id="tpx-xd-sVK"/>
                             <constraint firstItem="Dgi-V3-sbA" firstAttribute="top" secondItem="ZjR-eP-Xbx" secondAttribute="top" constant="20" id="zEx-kZ-qni"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZjR-eP-Xbx"/>
