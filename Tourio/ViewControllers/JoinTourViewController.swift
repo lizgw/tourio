@@ -49,12 +49,12 @@ class JoinTourViewController: UIViewController, TourListingViewProtocol {
         var tourList = [Tour]()
         
         // TEMPORARY: make 5 random tours
-        for _ in 0...4
+        for _ in 1...5
         {
             let randUsername = "user\(arc4random_uniform(100))"
             let isOrdered: Bool = arc4random_uniform(2) == 0 ? true : false
             let tour = Tour(createdBy: randUsername, isOrdered: isOrdered)
-            tour.name = "Tour Name"
+            tour.name = "Tour \(arc4random_uniform(100))"
             tour.iconPath = "UserIcon"
             tourList.append(tour)
         }
@@ -73,13 +73,19 @@ class JoinTourViewController: UIViewController, TourListingViewProtocol {
     }
     
     func tourListingViewTapped(tour: Tour) {
-        performSegue(withIdentifier: "JoinToDetailsSegue", sender: nil)
+        // go to the details screen when a listing view is tapped
+        performSegue(withIdentifier: "JoinToDetailsSegue", sender: tour)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // if we're going to the details segue
         if (segue.identifier == "JoinToDetailsSegue") {
-            print("going to the details segue")
+            
+            // check type for view controller and the Tour
+            guard let detailsVC = segue.destination as? TourDetailsViewController,
+                let tourObj = sender as? Tour else { return }
+            // set the view controller's tour property
+            detailsVC.tour = tourObj
         }
     }
-
 }

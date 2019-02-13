@@ -10,10 +10,26 @@ import UIKit
 
 class TourDetailsViewController: UIViewController {
 
+    var tour: Tour = Tour(createdBy: "DEFAULT", isOrdered: true)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        buildUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        showTourDetails()
+    }
+    
+    func showTourDetails() {
+        print("Tour Name: \(tour.name)")
+    }
+    
+    func buildUI() {
+        print("built UI")
     }
 
 }
