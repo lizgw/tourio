@@ -55,6 +55,7 @@ class JoinTourViewController: UIViewController, TourListingViewProtocol {
             let isOrdered: Bool = arc4random_uniform(2) == 0 ? true : false
             let tour = Tour(createdBy: randUsername, isOrdered: isOrdered)
             tour.name = "Tour Name"
+            tour.iconPath = "UserIcon"
             tourList.append(tour)
         }
         
@@ -71,7 +72,7 @@ class JoinTourViewController: UIViewController, TourListingViewProtocol {
         }
     }
     
-    func tourListingViewTapped(tourName: String) {
+    func tourListingViewTapped(tour: Tour) {
         performSegue(withIdentifier: "JoinToDetailsSegue", sender: nil)
     }
     
