@@ -145,10 +145,83 @@
                     <view key="view" contentMode="scaleToFill" id="yaY-oe-qU5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qQO-O8-uxv">
+                                <rect key="frame" x="10" y="74" width="300" height="419"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ul1-Hr-ZK9" userLabel="Tour Details Stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gqa-U7-w82">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="7oj-pM-PnK"/>
+                                                    <constraint firstAttribute="width" constant="100" id="hkq-Ar-6Aj"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MP1-Rp-Zyp" userLabel="Details Text Stack">
+                                                <rect key="frame" x="110" y="0.0" width="190" height="100"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[TOUR NAME]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW9-di-g1y">
+                                                        <rect key="frame" x="0.0" y="0.0" width="190" height="45"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by [USER] - 0.0 mi away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEk-Bf-Qv8">
+                                                        <rect key="frame" x="0.0" y="55" width="190" height="45"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="gqa-U7-w82" firstAttribute="top" secondItem="ul1-Hr-ZK9" secondAttribute="top" id="JeI-O7-Ofa"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yyE-SA-iEY">
+                                        <rect key="frame" x="0.0" y="110" width="300" height="309"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXn-tC-cOU">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="162.5"/>
+                                                <string key="text">[TOUR DESCRIPTION] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet justo donec enim diam vulputate ut pharetra sit. Tortor consequat id porta nibh venenatis cras. Ut eu sem integer vitae justo eget magna fermentum.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWH-gq-8Tl">
+                                                <rect key="frame" x="0.0" y="162.5" width="300" height="146.5"/>
+                                                <state key="normal" title="Join Tour"/>
+                                                <connections>
+                                                    <action selector="joinTourPressed:" destination="dlM-if-4Eo" eventType="touchUpInside" id="kgF-sV-rHU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ul1-Hr-ZK9" firstAttribute="top" secondItem="qQO-O8-uxv" secondAttribute="top" id="qfJ-vz-Sbu"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qQO-O8-uxv" firstAttribute="top" secondItem="rYT-u7-NTb" secondAttribute="top" constant="10" id="6UC-dK-Ur8"/>
+                            <constraint firstAttribute="trailing" secondItem="qQO-O8-uxv" secondAttribute="trailing" constant="10" id="C18-a8-fut"/>
+                            <constraint firstAttribute="bottom" secondItem="qQO-O8-uxv" secondAttribute="bottom" constant="75" id="RJN-Lk-Edi"/>
+                            <constraint firstItem="qQO-O8-uxv" firstAttribute="leading" secondItem="rYT-u7-NTb" secondAttribute="leading" constant="10" id="oel-fC-Fwx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rYT-u7-NTb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tour Details" id="zkO-KZ-sHe"/>
+                    <connections>
+                        <outlet property="tourDescriptionLabel" destination="aXn-tC-cOU" id="5GW-6i-ksy"/>
+                        <outlet property="tourDetailsLabel" destination="WEk-Bf-Qv8" id="L6u-JG-YXK"/>
+                        <outlet property="tourIcon" destination="gqa-U7-w82" id="Wly-3z-f4U"/>
+                        <outlet property="tourNameLabel" destination="RW9-di-g1y" id="RAf-r0-EIC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXj-1V-ihB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

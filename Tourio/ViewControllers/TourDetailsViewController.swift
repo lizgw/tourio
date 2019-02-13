@@ -12,10 +12,13 @@ class TourDetailsViewController: UIViewController {
 
     var tour: Tour = Tour(createdBy: "DEFAULT", isOrdered: true)
     
+    @IBOutlet weak var tourIcon: UIImageView!
+    @IBOutlet weak var tourNameLabel: UILabel!
+    @IBOutlet weak var tourDetailsLabel: UILabel!
+    @IBOutlet weak var tourDescriptionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        buildUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,11 +28,14 @@ class TourDetailsViewController: UIViewController {
     }
     
     func showTourDetails() {
-        print("Tour Name: \(tour.name)")
+        tourIcon.image = UIImage(named: tour.iconPath)
+        tourNameLabel.text = tour.name
+        tourDetailsLabel.text = "by \(tour.createdBy) - \(tour.distanceAway) mi away"
+        tourDescriptionLabel.text = tour.desc
     }
     
-    func buildUI() {
-        print("built UI")
+    @IBAction func joinTourPressed(_ sender: Any) {
+        print("Join Tour pressed")
     }
 
 }
