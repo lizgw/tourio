@@ -288,6 +288,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="mapView" destination="dDn-ga-UWG" id="bff-UG-qdy"/>
                         <segue destination="Ns1-dW-VT0" kind="show" identifier="PointDetailsSegue" id="rjV-G6-OIG"/>
                     </connections>
                 </viewController>
