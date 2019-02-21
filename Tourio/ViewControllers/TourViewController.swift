@@ -15,11 +15,17 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
     var locManager: CLLocationManager!
     var currentTour: Tour? = nil
+    var pointsAdded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         locationSetup()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         mapSetup()
     }
     
@@ -48,7 +54,9 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
             print("there is no most recent location")
         }
         
-        addPoints()
+        if !pointsAdded {
+            addPoints()
+        }
     }
     
     // add the annotations for the current tour
@@ -62,6 +70,8 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
         for point in currentTour.getPointList() {
             mapView.addAnnotation(point.getMapPointView())
         }
+        
+        pointsAdded = true
     }
     
     // build a demo tour for debugging
