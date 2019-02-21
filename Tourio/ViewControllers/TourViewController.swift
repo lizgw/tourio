@@ -116,5 +116,13 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
         /*let lastLocation = locations[locations.count - 1]
         print(lastLocation.coordinate)*/
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PointListSegue" {
+            if let pointListVC = segue.destination as? PointListViewController {
+                pointListVC.currentTour = currentTour
+            }
+        }
+    }
 
 }

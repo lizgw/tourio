@@ -9,11 +9,17 @@
 import UIKit
 
 class PointListViewController: UIViewController {
+    
+    var currentTour: Tour?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let currentTour = currentTour {
+            print(currentTour)
+        } else {
+            print("no current tour")
+        }
     }
 
 }
