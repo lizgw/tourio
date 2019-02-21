@@ -20,11 +20,6 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
 
         locationSetup()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
         mapSetup()
     }
     
