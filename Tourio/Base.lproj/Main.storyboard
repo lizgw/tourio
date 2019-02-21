@@ -250,14 +250,28 @@
                     <view key="view" contentMode="scaleToFill" id="bzn-3n-YUO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N7o-1C-cH5">
+                                <rect key="frame" x="10" y="74" width="300" height="435"/>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="N7o-1C-cH5" secondAttribute="bottom" constant="10" id="FXQ-98-OTK"/>
+                            <constraint firstItem="N7o-1C-cH5" firstAttribute="leading" secondItem="BJm-uc-rIl" secondAttribute="leading" constant="10" id="LVY-mu-CaW"/>
+                            <constraint firstItem="N7o-1C-cH5" firstAttribute="top" secondItem="BJm-uc-rIl" secondAttribute="top" constant="10" id="nCc-fD-6MI"/>
+                            <constraint firstItem="N7o-1C-cH5" firstAttribute="trailing" secondItem="BJm-uc-rIl" secondAttribute="trailing" constant="-10" id="sfj-Nj-899"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BJm-uc-rIl"/>
                     </view>
                     <navigationItem key="navigationItem" title="Point List" largeTitleDisplayMode="never" id="Lyl-Wh-YIH"/>
+                    <connections>
+                        <outlet property="stackView" destination="N7o-1C-cH5" id="1fh-j4-mHJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1h3-bq-NVT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765" y="1848"/>
+            <point key="canvasLocation" x="765" y="1847.5352112676057"/>
         </scene>
         <!--Tour-->
         <scene sceneID="GuD-7o-XRJ">

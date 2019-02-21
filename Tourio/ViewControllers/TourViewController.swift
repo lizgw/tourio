@@ -84,7 +84,8 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
         
         if let currentPos = locManager.location?.coordinate {
             // create a bunch of random points
-            for _ in 1...5 {
+            let letters = ["a", "b", "c", "d", "e", "f", "g"]
+            for i in 1...5 {
                 // generate a random fraction
                 let isNegative = arc4random_uniform(2)
                 let isNegative2 = arc4random_uniform(2)
@@ -103,7 +104,7 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
                 
                 // make a new point and add it to the tour
                 let point = TourPoint(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long))
-                point.title = "point \(randNum * 10_000)"
+                point.title = "Point \(letters[i - 1].uppercased())"
                 currentTour.addPoint(point)
             }
         } else {
