@@ -14,13 +14,18 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     var locManager: CLLocationManager!
+    var currentTour: Tour? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         locationSetup()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         mapSetup()
-        addPoints()
     }
     
     func locationSetup() {
@@ -40,21 +45,65 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
         let viewSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         
         // center the map on the current location
-        if let currentPos = locManager.location?.coordinate {
+        if let mostRecentLocation = locManager.location {
+            let currentPos = mostRecentLocation.coordinate
             let viewRegion = MKCoordinateRegion(center: currentPos, span: viewSpan)
             mapView.setRegion(viewRegion, animated: true)
+        } else {
+            print("there is no most recent location")
         }
+        
+        addPoints()
     }
     
     // add the annotations for the current tour
     func addPoints() {
-        // TODO: if on tour...
-        // build a test point
-        let testCoord = CLLocationCoordinate2D(latitude: 33.1348324, longitude: -96.7718147)
-        let testPoint = MapPointView(title: "Test point", subtitle: "this is a test!", coordinate: testCoord)
+        createDemoTour() // for testing
         
-        // add it to the map
-        mapView.addAnnotation(testPoint)
+        // don't try to add points from the tour if it doesn't exist
+        guard let currentTour = currentTour else { return }
+        
+        print(currentTour.getPointList())
+        for point in currentTour.getPointList() {
+            mapView.addAnnotation(point.getMapPointView())
+        }
+    }
+    
+    // build a demo tour for debugging
+    func createDemoTour() {
+        // create the tour
+        currentTour = Tour(createdBy: "testuser", isOrdered: true)
+        
+        // make sure it exists & configure it...
+        guard let currentTour = currentTour else { return }
+        
+        if let currentPos = locManager.location?.coordinate {
+            // create a bunch of random points
+            for _ in 1...5 {
+                // generate a random fraction
+                let isNegative = arc4random_uniform(2)
+                let isNegative2 = arc4random_uniform(2)
+                
+                var randNum: Double = Double(arc4random_uniform(100)) * 0.00001
+                var randNum2 = randNum
+                if isNegative < 1 {
+                    randNum *= -1
+                }
+                if isNegative2 < 1 {
+                    randNum2 *= -1
+                }
+                // modify the current coordinates a bit
+                let lat = currentPos.latitude + randNum
+                let long = currentPos.longitude + randNum2
+                
+                // make a new point and add it to the tour
+                let point = TourPoint(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long))
+                point.title = "point \(randNum * 10_000)"
+                currentTour.addPoint(point)
+            }
+        } else {
+            print("no location???")
+        }
     }
     
     // handle errors from the location manager
@@ -64,8 +113,8 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
     
     // get the last location from the manager
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let lastLocation = locations[locations.count - 1]
-        print(lastLocation.coordinate)
+        /*let lastLocation = locations[locations.count - 1]
+        print(lastLocation.coordinate)*/
     }
 
 }

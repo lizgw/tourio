@@ -62,4 +62,12 @@ class Tour {
         return tourView
     }
     
+    func getPointList() -> [TourPoint] {
+        return pointCollection.points
+    }
+    
+    func addPoint(_ point: TourPoint) {
+        pointCollection.addPoint(point)
+    }
+    
 }

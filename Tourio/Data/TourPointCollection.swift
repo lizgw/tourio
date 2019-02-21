@@ -27,6 +27,10 @@ class TourPointCollection {
         return points[atIndex]
     }
     
+    func addPoint(_ point: TourPoint) {
+        points.append(point)
+    }
+    
     // get point by ID?
     // get point by name?
     
