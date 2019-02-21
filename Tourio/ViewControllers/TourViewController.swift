@@ -127,6 +127,11 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
         if segue.identifier == "PointListSegue" {
             if let pointListVC = segue.destination as? PointListViewController {
                 pointListVC.currentTour = currentTour
+                
+                // send the coordinate of the current location to the VC
+                if let coord = locManager.location?.coordinate {
+                    pointListVC.currentCoordinate = coord
+                }
             }
         }
     }

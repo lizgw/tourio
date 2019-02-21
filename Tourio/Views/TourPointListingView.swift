@@ -8,14 +8,17 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 class TourPointListingView: UIStackView {
     
     // holds all data
     let point: TourPoint
+    let currentPos: CLLocationCoordinate2D
     
-    init(fromPoint: TourPoint) {
+    init(fromPoint: TourPoint, currentPos: CLLocationCoordinate2D) {
         self.point = fromPoint
+        self.currentPos = currentPos
         super.init(frame: CGRect.zero)
         setupElements()
     }
@@ -34,10 +37,17 @@ class TourPointListingView: UIStackView {
         pointNameLabel.text = point.title
         
         let distAwayLabel = UILabel()
-        distAwayLabel.text = "\(point.distanceAway) mi away"
+        distAwayLabel.text = "\(getDistanceAway()) m away"
         
         addArrangedSubview(pointNameLabel)
         addArrangedSubview(distAwayLabel)
+    }
+    
+    func getDistanceAway() -> Double {
+        // create 2 locations
+        let currentLoc = CLLocation(latitude: currentPos.latitude, longitude: currentPos.longitude)
+        let pointLoc = CLLocation(latitude: point.coordinate.latitude, longitude: point.coordinate.longitude)
+        return currentLoc.distance(from: pointLoc) // in meters
     }
     
 }

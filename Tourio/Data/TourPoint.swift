@@ -19,12 +19,6 @@ class TourPoint {
     var visited: Bool = false
     var hiddenUntilDiscovered: Bool = false
     var contentHiddenUntilDiscovered: Bool = true
-    var distanceAway: Double {
-        get {
-            // TODO: does some math with the coordinate
-            return 0.0
-        }
-    }
     
     // --- initializers ---
     // coordinate is the only var that needs to be immediately initalized with data
@@ -42,8 +36,8 @@ class TourPoint {
     }
     
     // returns a TourPointListingView that represents this point
-    func getTourPointListingView() -> TourPointListingView {
-        return TourPointListingView(fromPoint: self)
+    func getTourPointListingView(currentPos: CLLocationCoordinate2D) -> TourPointListingView {
+        return TourPointListingView(fromPoint: self, currentPos: currentPos)
     }
     
 }

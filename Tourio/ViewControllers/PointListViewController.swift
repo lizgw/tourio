@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PointListViewController: UIViewController {
     
     var currentTour: Tour?
+    var currentCoordinate: CLLocationCoordinate2D?
     
     @IBOutlet weak var stackView: UIStackView!
     
@@ -31,7 +33,9 @@ class PointListViewController: UIViewController {
         guard let currentTour = currentTour else { return }
         
         for point in currentTour.getPointList() {
-            stackView.addArrangedSubview(point.getTourPointListingView())
+            if let currentCoordinate = currentCoordinate {
+                stackView.addArrangedSubview(point.getTourPointListingView(currentPos: currentCoordinate))
+            }
         }
     }
 
