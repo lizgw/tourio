@@ -37,7 +37,17 @@ class TourPointListingView: UIStackView {
         pointNameLabel.text = point.title
         
         let distAwayLabel = UILabel()
-        distAwayLabel.text = "\(getDistanceAway()) m away"
+        
+        // check units
+        var dist = getDistanceAway()
+        var unit = "ft"
+        // if it's more than a half mile away
+        if dist >= 2640 {
+            // display miles instead of feet
+            unit = "mi"
+            dist /= 5280
+        }
+        distAwayLabel.text = "\(dist) \(unit) away"
         
         addArrangedSubview(pointNameLabel)
         addArrangedSubview(distAwayLabel)
@@ -47,7 +57,9 @@ class TourPointListingView: UIStackView {
         // create 2 locations
         let currentLoc = CLLocation(latitude: currentPos.latitude, longitude: currentPos.longitude)
         let pointLoc = CLLocation(latitude: point.coordinate.latitude, longitude: point.coordinate.longitude)
-        return currentLoc.distance(from: pointLoc) // in meters
+        let distVal = currentLoc.distance(from: pointLoc) * 3.28084 // meters to ft
+        let accuracy = 100.0
+        return Double(floor(distVal * accuracy) / accuracy) // fancy math trick to truncate the double
     }
     
 }
