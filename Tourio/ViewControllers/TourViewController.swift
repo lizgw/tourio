@@ -41,6 +41,8 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
         // setup map appearance
         mapView.mapType = .standard
         mapView.showsUserLocation = true
+        mapView.isPitchEnabled = false
+        // TODO: live update map with heading
         
         // how far the map spans
         let viewSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
