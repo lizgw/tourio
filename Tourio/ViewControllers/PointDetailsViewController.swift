@@ -15,9 +15,13 @@ class PointDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let point = point {
-            print("point name: \(point.title)")
-        }
+        setupDisplay()
+    }
+    
+    func setupDisplay() {
+        guard let point = point else { return }
+        
+        title = point.title
     }
 
 }
