@@ -51,10 +51,23 @@ class PointListTableViewController: UITableViewController {
             let point = currentTour.getPointList()[indexPath.row]
             
             cell.textLabel?.text = "\(point.title)"
-            cell.detailTextLabel?.text = "0.0 mi away" // TODO: calculate actual distance
+            cell.detailTextLabel?.text = "\(getDistanceAway(from: point)) ft away" // TODO: calculate actual distance
         }
 
         return cell
+    }
+    
+    func getDistanceAway(from point: TourPoint) -> Double {
+        // create 2 locations
+        if let currentCoordinate = currentCoordinate {
+            let currentLoc = CLLocation(latitude: currentCoordinate.latitude, longitude: currentCoordinate.longitude)
+            let pointLoc = CLLocation(latitude: point.coordinate.latitude, longitude: point.coordinate.longitude)
+            let distVal = currentLoc.distance(from: pointLoc) * 3.28084 // meters to ft
+            let accuracy = 100.0
+            return Double(floor(distVal * accuracy) / accuracy) // fancy math trick to truncate the double
+        } else {
+            return 0
+        }
     }
 
     /*

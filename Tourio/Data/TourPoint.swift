@@ -35,9 +35,4 @@ class TourPoint {
         return MapPointView(title: title, subtitle: subtitle, coordinate: coordinate)
     }
     
-    // returns a TourPointListingView that represents this point
-    func getTourPointListingView(currentPos: CLLocationCoordinate2D) -> TourPointListingView {
-        return TourPointListingView(fromPoint: self, currentPos: currentPos)
-    }
-    
 }
