@@ -39,7 +39,7 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
     
     func mapSetup() {
         // setup map appearance
-        mapView.mapType = .standard
+        mapView.mapType = .hybrid
         mapView.showsUserLocation = true
         mapView.isPitchEnabled = false
         // TODO: live update map with heading
