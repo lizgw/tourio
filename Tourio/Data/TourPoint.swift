@@ -35,4 +35,13 @@ class TourPoint {
         return MapPointView(title: title, subtitle: subtitle, coordinate: coordinate)
     }
     
+    func getDistanceAway(from otherCoordinate: CLLocationCoordinate2D) -> Double {
+        // create 2 locations
+        let currentLoc = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        let pointLoc = CLLocation(latitude: otherCoordinate.latitude, longitude: otherCoordinate.longitude)
+        let distVal = currentLoc.distance(from: pointLoc) * 3.28084 // meters to ft
+        let accuracy = 100.0
+        return Double(floor(distVal * accuracy) / accuracy) // fancy math trick to truncate the double
+    }
+    
 }

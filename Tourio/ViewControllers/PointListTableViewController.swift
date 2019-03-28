@@ -48,26 +48,21 @@ class PointListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pointCell", for: indexPath)
         
         if let currentTour = currentTour {
+            // get the point data that we need to show
             let point = currentTour.getPointList()[indexPath.row]
             
+            // show the title
             cell.textLabel?.text = "\(point.title)"
-            cell.detailTextLabel?.text = "\(getDistanceAway(from: point)) ft away" // TODO: calculate actual distance
+            
+            // show the distance from the current location
+            if let currentCoordinate = currentCoordinate {
+                cell.detailTextLabel?.text = "\(point.getDistanceAway(from: currentCoordinate)) ft away"
+            } else {
+                cell.detailTextLabel?.text = "? ft away"
+            }
         }
 
         return cell
-    }
-    
-    func getDistanceAway(from point: TourPoint) -> Double {
-        // create 2 locations
-        if let currentCoordinate = currentCoordinate {
-            let currentLoc = CLLocation(latitude: currentCoordinate.latitude, longitude: currentCoordinate.longitude)
-            let pointLoc = CLLocation(latitude: point.coordinate.latitude, longitude: point.coordinate.longitude)
-            let distVal = currentLoc.distance(from: pointLoc) * 3.28084 // meters to ft
-            let accuracy = 100.0
-            return Double(floor(distVal * accuracy) / accuracy) // fancy math trick to truncate the double
-        } else {
-            return 0
-        }
     }
 
     /*
