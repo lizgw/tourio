@@ -127,7 +127,7 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PointListSegue" {
-            if let pointListVC = segue.destination as? PointListViewController {
+            if let pointListVC = segue.destination as? PointListTableViewController {
                 pointListVC.currentTour = currentTour
                 
                 // send the coordinate of the current location to the VC

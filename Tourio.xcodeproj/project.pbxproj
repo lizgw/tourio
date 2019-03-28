@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76268759224D4AE600BBD630 /* PointListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76268758224D4AE600BBD630 /* PointListTableViewController.swift */; };
 		764199DA22023B4300D64391 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764199D922023B4300D64391 /* AppDelegate.swift */; };
 		764199DF22023B4300D64391 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764199DD22023B4300D64391 /* Main.storyboard */; };
 		764199E122023B4400D64391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764199E022023B4400D64391 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76268758224D4AE600BBD630 /* PointListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointListTableViewController.swift; sourceTree = "<group>"; };
 		764199D622023B4300D64391 /* Tourio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tourio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		764199D922023B4300D64391 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		764199DE22023B4300D64391 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				7678B523220A29A700E693D3 /* JoinTourViewController.swift */,
 				7678B526220A29A800E693D3 /* PointDetailsViewController.swift */,
 				7678B529220A29A800E693D3 /* PointListViewController.swift */,
+				76268758224D4AE600BBD630 /* PointListTableViewController.swift */,
 				7678B524220A29A800E693D3 /* ProfileViewController.swift */,
 				7678B52A220A29A800E693D3 /* TourDetailsViewController.swift */,
 				7678B525220A29A800E693D3 /* TourViewController.swift */,
@@ -212,6 +215,7 @@
 				7678B53E220A29A800E693D3 /* MapPointView.swift in Sources */,
 				7678B531220A29A800E693D3 /* TourPoint.swift in Sources */,
 				764199DA22023B4300D64391 /* AppDelegate.swift in Sources */,
+				76268759224D4AE600BBD630 /* PointListTableViewController.swift in Sources */,
 				7678B533220A29A800E693D3 /* ProfileViewController.swift in Sources */,
 				7678B535220A29A800E693D3 /* PointDetailsViewController.swift in Sources */,
 				7678B537220A29A800E693D3 /* TourPointListingView.swift in Sources */,

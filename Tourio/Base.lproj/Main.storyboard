@@ -244,34 +244,49 @@
             <point key="canvasLocation" x="2" y="1848"/>
         </scene>
         <!--Point List-->
-        <scene sceneID="VSv-kL-5Oe">
+        <scene sceneID="8uc-0Q-bAI">
             <objects>
-                <viewController id="sfV-wd-cK4" customClass="PointListViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bzn-3n-YUO">
+                <tableViewController id="EOs-ac-zlK" customClass="PointListTableViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="C93-Ib-9O7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N7o-1C-cH5">
-                                <rect key="frame" x="10" y="74" width="300" height="435"/>
-                            </stackView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="N7o-1C-cH5" secondAttribute="bottom" constant="10" id="FXQ-98-OTK"/>
-                            <constraint firstItem="N7o-1C-cH5" firstAttribute="leading" secondItem="BJm-uc-rIl" secondAttribute="leading" constant="10" id="LVY-mu-CaW"/>
-                            <constraint firstItem="N7o-1C-cH5" firstAttribute="top" secondItem="BJm-uc-rIl" secondAttribute="top" constant="10" id="nCc-fD-6MI"/>
-                            <constraint firstItem="N7o-1C-cH5" firstAttribute="trailing" secondItem="BJm-uc-rIl" secondAttribute="trailing" constant="-10" id="sfj-Nj-899"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="BJm-uc-rIl"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Point List" largeTitleDisplayMode="never" id="Lyl-Wh-YIH"/>
-                    <connections>
-                        <outlet property="stackView" destination="N7o-1C-cH5" id="1fh-j4-mHJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1h3-bq-NVT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="pointCell" textLabel="kjF-56-qKy" detailTextLabel="Qd7-Oa-Yqg" style="IBUITableViewCellStyleValue1" id="W1g-GW-JW7">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W1g-GW-JW7" id="piX-LE-hjr">
+                                    <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kjF-56-qKy">
+                                            <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qd7-Oa-Yqg">
+                                            <rect key="frame" x="226" y="12" width="59" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EOs-ac-zlK" id="bDB-ex-Drr"/>
+                            <outlet property="delegate" destination="EOs-ac-zlK" id="OcO-2f-eCQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Point List" largeTitleDisplayMode="never" id="9B4-ae-7m4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Khq-Mn-nEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765" y="1847.5352112676057"/>
+            <point key="canvasLocation" x="806" y="1848"/>
         </scene>
         <!--Tour-->
         <scene sceneID="GuD-7o-XRJ">
@@ -297,7 +312,7 @@
                     <navigationItem key="navigationItem" title="Tour" largeTitleDisplayMode="always" id="MPG-6x-2zK">
                         <barButtonItem key="rightBarButtonItem" title="Point List" id="ZVy-iw-Qlj">
                             <connections>
-                                <segue destination="sfV-wd-cK4" kind="show" identifier="PointListSegue" id="lrt-u0-83M"/>
+                                <segue destination="EOs-ac-zlK" kind="show" identifier="PointListSegue" id="GK9-Z8-FXy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
