@@ -10,10 +10,14 @@ import UIKit
 
 class PointDetailsViewController: UIViewController {
 
+    var point: TourPoint?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let point = point {
+            print("point name: \(point.title)")
+        }
     }
 
 }

@@ -241,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7l-7a-UED" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2" y="1848"/>
+            <point key="canvasLocation" x="804" y="2651"/>
         </scene>
         <!--Point List-->
         <scene sceneID="8uc-0Q-bAI">
@@ -283,6 +283,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Point List" largeTitleDisplayMode="never" id="9B4-ae-7m4"/>
+                    <connections>
+                        <segue destination="Ns1-dW-VT0" kind="show" identifier="PointDetailsSegue" id="7b8-0c-qCI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khq-Mn-nEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -318,7 +321,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="dDn-ga-UWG" id="bff-UG-qdy"/>
-                        <segue destination="Ns1-dW-VT0" kind="show" identifier="PointDetailsSegue" id="rjV-G6-OIG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cqw-Bs-vDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
