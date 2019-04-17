@@ -1,0 +1,6 @@
+framework module Pods_Tourio {
+  umbrella header "Pods-Tourio-umbrella.h"
+
+  export *
+  module * { export * }
+}
