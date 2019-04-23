@@ -10,10 +10,15 @@ import UIKit
 
 class CreateTourViewController: UIViewController {
 
+    @IBOutlet weak var descriptionField: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        descriptionField.layer.borderColor = UIColor.lightGray.cgColor
+        descriptionField.layer.borderWidth = 1
     }
 
 }
