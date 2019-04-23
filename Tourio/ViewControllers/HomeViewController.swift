@@ -7,12 +7,34 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
 
     var onTour = false
     
     @IBOutlet weak var quitTourButton: UIButton!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // test read some data from firebase
+        let testCollection = Firestore.firestore().collection("users")
+        
+        // get documents
+        testCollection.getDocuments() { (querySnapshot, err) in
+            // handle the error
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                // go through each document in the collection
+                for document in querySnapshot!.documents {
+                    // print it out
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

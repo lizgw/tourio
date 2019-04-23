@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // FOR TESTING: from https://firebase.google.com/docs/firestore/quickstart?refresh=1
         // Add a new document with a generated ID
-        /*var ref: DocumentReference? = nil
+        var ref: DocumentReference? = nil
         ref = db.collection("users").addDocument(data: [
             "first": "Ada",
             "last": "Lovelace",
@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } else {
                 print("Document added with ID: \(ref!.documentID)")
             }
-        }*/
+        }
         
         return true
     }
