@@ -18,28 +18,60 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // test read some data from firebase
-        let testCollection = Firestore.firestore().collection("users")
-        
-        // get documents
-        testCollection.getDocuments() { (querySnapshot, err) in
-            // handle the error
+        fetchTours()
+    }
+    
+    func fetchTours() {
+        let tourCollection = Firestore.firestore().collection("testTours")
+        // get all the tours
+        tourCollection.getDocuments() { (querySnapshot, err) in
+            // handle error
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-                // go through each document in the collection
+                // create a tour for each document
+                var tours: [Tour] = [Tour]()
                 for document in querySnapshot!.documents {
-                    // print it out
-                    print("\(document.documentID) => \(document.data())")
+                    // get the tour data
+                    let data = document.data()
+                    // get the point collection
+                    let pointCol = tourCollection.document(document.documentID).collection(document.documentID + "points")
+                    
+                    var points: [TourPoint] = [TourPoint]()
+                    // go through the collection & build all the points
+                    pointCol.getDocuments() { (querySnapshot, err) in
+                        if let err = err {
+                            print(err)
+                        } else {
+                            for doc in querySnapshot!.documents {
+                                // create a point
+                                if let point = TourPoint(dictionary: doc.data()) {
+                                    points.append(point)
+                                } else {
+                                    print("error creating point")
+                                }
+                            }
+                            
+                            // create a new tour
+                            if let newTour = Tour(dictionary: data, pointCollection: points) {
+                                tours.append(newTour)
+                            } else {
+                                print("Tour init failed")
+                            }
+                        }
+                        // do something!!
+                        for tour in tours {
+                            print(tour)
+                        }
+                    }
                 }
+                
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("Loaded home view")
     }
     
     override func viewDidAppear(_ animated: Bool) {

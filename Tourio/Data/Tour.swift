@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Tour {
+class Tour : CustomStringConvertible {
     
     // main/meta properties
     var name: String = ""
@@ -39,6 +39,10 @@ class Tour {
         return 0.0
     }
     
+    var description: String {
+        return "--- TOUR ---\nname: \(name)\n...\npoint collection: \(pointCollection)"
+    }
+    
     // --- initializers ---
     
     // createdBy is the only property that gets initialized immediately
@@ -50,6 +54,36 @@ class Tour {
         
         // create an empty tour point collection
         pointCollection = TourPointCollection(isOrdered: isOrdered)
+    }
+    
+    init(name: String, createdBy: String, desc: String, iconPath: String, isOrdered: Bool) {
+        // setup everything
+        self.name = name
+        self.createdBy = createdBy
+        self.desc = desc
+        self.iconPath = iconPath
+        self.isOrdered = isOrdered
+        
+        pointCollection = TourPointCollection(isOrdered: isOrdered)
+    }
+    
+    convenience init?(dictionary: [String : Any], pointCollection: [TourPoint])
+    {
+        // get all the info from the dictionary & fail if any field is missing
+        guard let name = dictionary["name"] as? String,
+            let createdBy = dictionary["createdBy"] as? String,
+            let desc = dictionary["desc"] as? String,
+            let iconPath = dictionary["desc"] as? String,
+            let isOrdered = dictionary["isOrdered"] as? Bool
+            else { return nil}
+        
+        // if all that worked, init!
+        self.init(name: name, createdBy: createdBy, desc: desc, iconPath: iconPath, isOrdered: isOrdered)
+        
+        // set up the point collection
+        for point in pointCollection {
+            addPoint(point)
+        }
     }
     
     // --- methods ---

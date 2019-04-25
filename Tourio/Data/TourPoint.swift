@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-class TourPoint {
+class TourPoint: CustomStringConvertible {
     
     // variables
     var coordinate: CLLocationCoordinate2D
@@ -20,6 +20,10 @@ class TourPoint {
     var hiddenUntilDiscovered: Bool = false
     var contentHiddenUntilDiscovered: Bool = true
     
+    var description: String {
+        return "\(title) at (\(coordinate.latitude), \(coordinate.longitude))"
+    }
+    
     // --- initializers ---
     // coordinate is the only var that needs to be immediately initalized with data
     init(coordinate: CLLocationCoordinate2D) {
@@ -27,6 +31,37 @@ class TourPoint {
         
         // create the empty contents array
         contents = [TourPointContent]()
+    }
+    
+    init(title: String, subtitle: String, visited: Bool, hiddenUntilDiscovered: Bool, contentHiddenUntilDiscovered: Bool, coordinate: CLLocationCoordinate2D) {
+        self.title = title
+        self.subtitle = subtitle
+        self.visited = visited
+        self.hiddenUntilDiscovered = hiddenUntilDiscovered
+        self.contentHiddenUntilDiscovered = contentHiddenUntilDiscovered
+        self.coordinate = coordinate
+        
+        contents = [TourPointContent]()
+    }
+    
+    // for building a TourPoint from the database
+    convenience init?(dictionary: [String : Any]) {
+        // get all the data from the dictionary & fail if it's missing anything
+        guard let title = dictionary["title"] as? String,
+            let subtitle = dictionary["subtitle"] as? String,
+            let visited = dictionary["visited"] as? Bool,
+            let hiddenUntilDiscovered = dictionary["hiddenUntilDiscovered"] as? Bool,
+            let contentHiddenUntilDiscovered = dictionary["contentHiddenUntilDiscovered"] as? Bool,
+            let latitude = dictionary["latitude"] as? Double,
+            let longitude = dictionary["longitude"] as? Double
+            // TODO: handle contents collection
+            else { return nil }
+        
+        // build a coordinate from the latitide & longitude
+        let coord = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        
+        // initialize everything
+        self.init(title: title, subtitle: subtitle, visited: visited, hiddenUntilDiscovered: hiddenUntilDiscovered, contentHiddenUntilDiscovered: contentHiddenUntilDiscovered, coordinate: coord)
     }
     
     // --- methods ---

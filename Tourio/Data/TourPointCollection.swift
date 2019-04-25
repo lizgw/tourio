@@ -9,11 +9,23 @@
 import Foundation
 import CoreLocation
 
-class TourPointCollection {
+class TourPointCollection: CustomStringConvertible {
     
     // data
     var points: [TourPoint]
     var isOrdered: Bool
+    
+    var description: String {
+        var result = "->"
+        
+        for point in self.points {
+            result += point.title + ", "
+        }
+        
+        return "\(points)"
+    }
+    
+    // --- initializers ---
     
     init(isOrdered: Bool) {
         points = [TourPoint]()
