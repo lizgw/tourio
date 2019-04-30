@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
                     // get the tour data
                     let data = document.data()
                     // get the point collection
-                    let pointCol = tourCollection.document(document.documentID).collection(document.documentID + "points")
+                    let pointCol = tourCollection.document(document.documentID).collection("points")
                     
                     var points: [TourPoint] = [TourPoint]()
                     // go through the collection & build all the points
