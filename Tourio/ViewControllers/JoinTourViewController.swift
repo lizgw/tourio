@@ -9,18 +9,18 @@
 import UIKit
 import FirebaseFirestore
 
-class JoinTourViewController: UIViewController, TourListingViewProtocol {
+class JoinTourViewController: UIViewController, TourListingViewProtocol, UITableViewDataSource {
 
+    @IBOutlet weak var nearbyTableView: UITableView!
     @IBOutlet weak var tourCodeTextField: UITextField!
-    @IBOutlet weak var nearbyStackView: UIStackView!
     
     var tourList: [Tour] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // setup the stack view
-        nearbyStackView.spacing = 5
+        
+        // setup table view
+        nearbyTableView.dataSource = self
         
         // get nearby tours - TODO: move this to a different place with network requests
         populateNearbyToursList()
@@ -30,6 +30,26 @@ class JoinTourViewController: UIViewController, TourListingViewProtocol {
         super.viewWillAppear(animated)
         
         fetchTours()
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // a row for each tour in the current list
+        return tourList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tourCell", for: indexPath)
+        
+        let tour = tourList[indexPath.row]
+        
+        cell.textLabel?.text = tour.name
+        cell.detailTextLabel?.text = "by \(tour.createdBy) - \(tour.distanceAway) mi away"
+        
+        return cell
     }
     
     func fetchTours() {
@@ -61,6 +81,7 @@ class JoinTourViewController: UIViewController, TourListingViewProtocol {
                         } else {
                             for doc in querySnapshot!.documents {
                                 // create a point
+                                print("using data: \(doc.data())")
                                 if let point = TourPoint(dictionary: doc.data()) {
                                     points.append(point)
                                 } else {
@@ -95,18 +116,20 @@ class JoinTourViewController: UIViewController, TourListingViewProtocol {
     
     func populateNearbyToursList() {
         print(tourList)
+        nearbyTableView.reloadData()
+        
         // clear out the stack view to find the new nearby views
-        for subview in nearbyStackView.arrangedSubviews {
+        /*for subview in nearbyStackView.arrangedSubviews {
             nearbyStackView.removeArrangedSubview(subview)
-        }
-        print("cleared out the view: \(nearbyStackView.arrangedSubviews)")
+        }*/
+        //print("cleared out the view: \(nearbyStackView.arrangedSubviews)")
         
         // for each tour, make a TourListingView and add it to the stack view
-        for tour in tourList {
+        /*for tour in tourList {
             let tourView = tour.getTourListingView()
             tourView.delegate = self
             nearbyStackView.addArrangedSubview(tourView)
-        }
+        }*/
     }
     
     func getNearbyTours() -> [Tour] {

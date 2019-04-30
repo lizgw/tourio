@@ -90,30 +90,54 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VGO-sA-Tnn">
-                                <rect key="frame" x="20" y="171" width="280" height="328"/>
-                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yfx-JQ-UVq">
+                                <rect key="frame" x="20" y="169" width="284" height="338"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tourCell" textLabel="92U-T6-NaV" detailTextLabel="iwG-em-8Vs" style="IBUITableViewCellStyleSubtitle" id="bmP-ih-fXH">
+                                        <rect key="frame" x="0.0" y="28" width="284" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bmP-ih-fXH" id="K6l-TU-VHb">
+                                            <rect key="frame" x="0.0" y="0.0" width="284" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="92U-T6-NaV">
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iwG-em-8Vs">
+                                                    <rect key="frame" x="15" y="25.5" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZjR-eP-Xbx" firstAttribute="trailing" secondItem="Dgi-V3-sbA" secondAttribute="trailing" constant="20" id="0ff-Os-lCL"/>
                             <constraint firstItem="Dgi-V3-sbA" firstAttribute="leading" secondItem="OQ2-ni-Uid" secondAttribute="trailing" constant="20" id="4NJ-DR-hMf"/>
                             <constraint firstItem="YVz-7R-2se" firstAttribute="leading" secondItem="ZjR-eP-Xbx" secondAttribute="leading" constant="20" id="7MV-iS-ezk"/>
-                            <constraint firstItem="VGO-sA-Tnn" firstAttribute="leading" secondItem="ZjR-eP-Xbx" secondAttribute="leading" constant="20" id="81G-Md-Hee"/>
                             <constraint firstItem="YVz-7R-2se" firstAttribute="top" secondItem="OQ2-ni-Uid" secondAttribute="bottom" constant="20" id="MpH-ba-Nba"/>
-                            <constraint firstItem="VGO-sA-Tnn" firstAttribute="top" secondItem="YVz-7R-2se" secondAttribute="bottom" constant="10" id="V2E-WY-uv1"/>
                             <constraint firstItem="ZjR-eP-Xbx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YVz-7R-2se" secondAttribute="trailing" symbolic="YES" id="h6O-ir-EDH"/>
                             <constraint firstItem="OQ2-ni-Uid" firstAttribute="top" secondItem="ZjR-eP-Xbx" secondAttribute="top" constant="20" id="nZB-GL-UBY"/>
                             <constraint firstItem="OQ2-ni-Uid" firstAttribute="leading" secondItem="ZjR-eP-Xbx" secondAttribute="leading" constant="20" id="nix-j4-6oJ"/>
-                            <constraint firstItem="ZjR-eP-Xbx" firstAttribute="bottom" secondItem="VGO-sA-Tnn" secondAttribute="bottom" constant="20" id="qxK-RW-KIZ"/>
-                            <constraint firstItem="ZjR-eP-Xbx" firstAttribute="trailing" secondItem="VGO-sA-Tnn" secondAttribute="trailing" constant="20" id="tpx-xd-sVK"/>
                             <constraint firstItem="Dgi-V3-sbA" firstAttribute="top" secondItem="ZjR-eP-Xbx" secondAttribute="top" constant="20" id="zEx-kZ-qni"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZjR-eP-Xbx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Join a Tour" largeTitleDisplayMode="never" id="Yq8-xC-PZx"/>
                     <connections>
-                        <outlet property="nearbyStackView" destination="VGO-sA-Tnn" id="4Rc-B1-deI"/>
+                        <outlet property="nearbyTableView" destination="Yfx-JQ-UVq" id="9TA-73-CvP"/>
                         <outlet property="tourCodeTextField" destination="OQ2-ni-Uid" id="vku-CM-7aC"/>
                         <segue destination="dlM-if-4Eo" kind="show" identifier="JoinToDetailsSegue" id="rox-vT-Ahf"/>
                     </connections>
@@ -483,6 +507,6 @@
         <image name="icon-tour" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CAV-g2-BMb"/>
+        <segue reference="rox-vT-Ahf"/>
     </inferredMetricsTieBreakers>
 </document>
