@@ -134,16 +134,16 @@
                                 <rect key="frame" x="20" y="164" width="280" height="199.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsb-Cg-mGI">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="17"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoo-XK-xBW">
-                                                <rect key="frame" x="0.0" y="0.0" width="58.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="58.5" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6iv-HH-Rap">
-                                                <rect key="frame" x="58.5" y="0.0" width="221.5" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6iv-HH-Rap">
+                                                <rect key="frame" x="58.5" y="0.0" width="221.5" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -151,7 +151,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8gI-oC-hCd">
-                                        <rect key="frame" x="0.0" y="51" width="280" height="148.5"/>
+                                        <rect key="frame" x="0.0" y="38" width="280" height="110.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zve-EH-1Vi">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="20.5"/>
@@ -160,7 +160,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7kd-NS-ElE">
-                                                <rect key="frame" x="0.0" y="20.5" width="280" height="128"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="280" height="90"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -173,6 +173,13 @@
                                             <constraint firstItem="7kd-NS-ElE" firstAttribute="leading" secondItem="8gI-oC-hCd" secondAttribute="leading" id="uBj-Vv-m6A"/>
                                         </constraints>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlT-QM-uMa">
+                                        <rect key="frame" x="0.0" y="169.5" width="280" height="30"/>
+                                        <state key="normal" title="Create"/>
+                                        <connections>
+                                            <segue destination="dlM-if-4Eo" kind="show" id="q1S-CB-h6T"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -188,6 +195,7 @@
                     <navigationItem key="navigationItem" title="Create a Tour" largeTitleDisplayMode="never" id="jhj-vc-heC"/>
                     <connections>
                         <outlet property="descriptionField" destination="7kd-NS-ElE" id="CZO-x1-r9s"/>
+                        <outlet property="nameField" destination="6iv-HH-Rap" id="gbw-D7-faW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVG-KH-mwm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -539,6 +547,6 @@
         <image name="icon-tour" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CAV-g2-BMb"/>
+        <segue reference="q1S-CB-h6T"/>
     </inferredMetricsTieBreakers>
 </document>
