@@ -40,7 +40,8 @@ class Tour : CustomStringConvertible {
     }
     
     var description: String {
-        return "--- TOUR ---\nname: \(name)\n...\npoint collection: \(pointCollection)"
+        //return "--- TOUR ---\nname: \(name)\n...\npoint collection: \(pointCollection)"
+        return "{ TOUR: \(name) }"
     }
     
     // --- initializers ---
