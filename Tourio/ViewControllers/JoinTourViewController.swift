@@ -40,11 +40,16 @@ class JoinTourViewController: UIViewController, TourListingViewProtocol {
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-                
                 // create a tour for each document
                 for document in querySnapshot!.documents {
                     // get the tour data
                     let data = document.data()
+                    
+                    // STOP if that tour is already in our list
+                    if self.tourExists(withID: document.documentID) {
+                        continue
+                    }
+                    
                     // get the point collection
                     let pointCol = tourCollection.document(document.documentID).collection("points")
                     
@@ -64,13 +69,13 @@ class JoinTourViewController: UIViewController, TourListingViewProtocol {
                             }
                             
                             // create a new tour
-                            if let newTour = Tour(dictionary: data, pointCollection: points) {
+                            if let newTour = Tour(dictionary: data, pointCollection: points, id: document.documentID) {
                                 self.tourList.append(newTour)
                             } else {
                                 print("Tour init failed")
                             }
                             
-                            self.showTours()
+                            self.populateNearbyToursList()
                         }
                     }
                 } // end for each document
@@ -78,22 +83,26 @@ class JoinTourViewController: UIViewController, TourListingViewProtocol {
         }
     }
     
-    func showTours() {
-        print(tourList)
+    func tourExists(withID searchID: String) -> Bool {
+        for tour in tourList {
+            if tour.id == searchID {
+                return true
+            }
+        }
+        
+        return false
     }
     
     func populateNearbyToursList() {
+        print(tourList)
         // clear out the stack view to find the new nearby views
         for subview in nearbyStackView.arrangedSubviews {
             nearbyStackView.removeArrangedSubview(subview)
         }
         print("cleared out the view: \(nearbyStackView.arrangedSubviews)")
         
-        // find tour objects and put them in a list
-        let nearbyTours: [Tour] = getNearbyTours()
-        
         // for each tour, make a TourListingView and add it to the stack view
-        for tour in nearbyTours {
+        for tour in tourList {
             let tourView = tour.getTourListingView()
             tourView.delegate = self
             nearbyStackView.addArrangedSubview(tourView)

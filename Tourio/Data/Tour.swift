@@ -17,6 +17,7 @@ class Tour : CustomStringConvertible {
     var desc: String = ""
     var iconPath: String = ""
     var isOrdered: Bool = true
+    var id: String = ""
     
     // data
     var pointCollection: TourPointCollection
@@ -68,7 +69,7 @@ class Tour : CustomStringConvertible {
         pointCollection = TourPointCollection(isOrdered: isOrdered)
     }
     
-    convenience init?(dictionary: [String : Any], pointCollection: [TourPoint])
+    convenience init?(dictionary: [String : Any], pointCollection: [TourPoint], id: String)
     {
         // get all the info from the dictionary & fail if any field is missing
         guard let name = dictionary["name"] as? String,
@@ -80,6 +81,8 @@ class Tour : CustomStringConvertible {
         
         // if all that worked, init!
         self.init(name: name, createdBy: createdBy, desc: desc, iconPath: iconPath, isOrdered: isOrdered)
+        
+        self.id = id
         
         // set up the point collection
         for point in pointCollection {
