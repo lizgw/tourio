@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseFirestore
 
-class JoinTourViewController: UIViewController, TourListingViewProtocol, UITableViewDataSource {
+class JoinTourViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var nearbyTableView: UITableView!
     @IBOutlet weak var tourCodeTextField: UITextField!
@@ -81,7 +81,6 @@ class JoinTourViewController: UIViewController, TourListingViewProtocol, UITable
                         } else {
                             for doc in querySnapshot!.documents {
                                 // create a point
-                                print("using data: \(doc.data())")
                                 if let point = TourPoint(dictionary: doc.data()) {
                                     points.append(point)
                                 } else {
@@ -117,37 +116,6 @@ class JoinTourViewController: UIViewController, TourListingViewProtocol, UITable
     func populateNearbyToursList() {
         print(tourList)
         nearbyTableView.reloadData()
-        
-        // clear out the stack view to find the new nearby views
-        /*for subview in nearbyStackView.arrangedSubviews {
-            nearbyStackView.removeArrangedSubview(subview)
-        }*/
-        //print("cleared out the view: \(nearbyStackView.arrangedSubviews)")
-        
-        // for each tour, make a TourListingView and add it to the stack view
-        /*for tour in tourList {
-            let tourView = tour.getTourListingView()
-            tourView.delegate = self
-            nearbyStackView.addArrangedSubview(tourView)
-        }*/
-    }
-    
-    func getNearbyTours() -> [Tour] {
-        var tourList = [Tour]()
-        
-        // TEMPORARY: make some random tours
-        for _ in 1...6
-        {
-            let randUsername = "user\(arc4random_uniform(100))"
-            let isOrdered: Bool = arc4random_uniform(2) == 0 ? true : false
-            let tour = Tour(createdBy: randUsername, isOrdered: isOrdered)
-            tour.name = "Tour \(arc4random_uniform(100))"
-            tour.iconPath = "UserIcon"
-            tour.desc = "This is the tour's default description."
-            tourList.append(tour)
-        }
-        
-        return tourList
     }
     
     @IBAction func joinButtonPressed(_ sender: Any) {
@@ -160,18 +128,17 @@ class JoinTourViewController: UIViewController, TourListingViewProtocol, UITable
         }
     }
     
-    func tourListingViewTapped(tour: Tour) {
-        // go to the details screen when a listing view is tapped
-        performSegue(withIdentifier: "JoinToDetailsSegue", sender: tour)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // if we're going to the details segue
         if (segue.identifier == "JoinToDetailsSegue") {
+            // get the tour object from the cell sender
+            guard let cell = sender as? UITableViewCell,
+                let tableView = cell.superview as? UITableView,
+                let path = tableView.indexPath(for: cell) else { return }
+            let tourObj = tourList[path.row]
             
-            // check type for view controller and the Tour
-            guard let detailsVC = segue.destination as? TourDetailsViewController,
-                let tourObj = sender as? Tour else { return }
+            // check type for view controller
+            guard let detailsVC = segue.destination as? TourDetailsViewController else { return }
             // set the view controller's tour property
             detailsVC.tour = tourObj
         }
