@@ -9,8 +9,6 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
-    var onTour = false
     
     @IBOutlet weak var quitTourButton: UIButton!
     
@@ -24,7 +22,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         // enable the quit button only if we're on a tour
-        if (onTour) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        if (appDelegate.currentTour != nil) {
             quitTourButton.isEnabled = true
         } else {
             quitTourButton.isEnabled = false

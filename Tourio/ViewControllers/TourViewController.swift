@@ -56,21 +56,34 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
             print("there is no most recent location")
         }
         
-        if !pointsAdded {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let delegateTour = delegate.currentTour
+        if !pointsAdded || delegateTour?.id != currentTour?.id {
             addPoints()
         }
     }
     
     // add the annotations for the current tour
     func addPoints() {
-        createDemoTour() // for testing
+        //createDemoTour() // for testing
+        
+        // get the current tour from the delegate!!
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        currentTour = appDelegate.currentTour
         
         // don't try to add points from the tour if it doesn't exist
         guard let currentTour = currentTour else { return }
         
+        // clear the previous annotations
+        let annotations = mapView.annotations.filter {
+            $0 !== self.mapView.userLocation
+        }
+        mapView.removeAnnotations(annotations)
+        
         print(currentTour.getPointList())
         for point in currentTour.getPointList() {
             mapView.addAnnotation(point.getMapPointView())
+            print("added point \(point.id)")
         }
         
         pointsAdded = true

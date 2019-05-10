@@ -38,8 +38,12 @@ class PointDetailsViewController: UIViewController {
             let pointDoc = tour.collection("points").document(point.id)
             
             pointDoc.getDocument() { (docSnapshot, err) in
-                if let docSnapshot = docSnapshot, docSnapshot.exists {
-                    print(docSnapshot.data())
+                if let docSnapshot = docSnapshot,
+                    docSnapshot.exists,
+                    let data = docSnapshot.data(),
+                    let text = data["textContent"] as? String
+                {
+                    self.textLabel.text = text
                 }
             }
         }
