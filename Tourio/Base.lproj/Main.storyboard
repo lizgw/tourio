@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iTg-JJ-25S">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,28 +15,28 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="1Ls-4g-gVm">
-                                <rect key="frame" x="20" y="160" width="374" height="633"/>
+                                <rect key="frame" x="20" y="131" width="280" height="368"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjL-pE-fm8">
-                                        <rect key="frame" x="149.5" y="0.0" width="75" height="169.5"/>
+                                        <rect key="frame" x="102.5" y="0.0" width="75" height="81.5"/>
                                         <state key="normal" title="Join a Tour"/>
                                         <connections>
                                             <segue destination="Emq-BO-dg7" kind="show" identifier="JoinTourSegue" id="S7o-Bu-L8W"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKw-4f-etC">
-                                        <rect key="frame" x="140.5" y="231.5" width="93" height="170"/>
+                                        <rect key="frame" x="93.5" y="143.5" width="93" height="81"/>
                                         <state key="normal" title="Create a Tour"/>
                                         <connections>
                                             <segue destination="WvM-dl-60n" kind="show" identifier="CreateTourSegue" id="ZYP-eC-62I"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPE-Xg-BhX">
-                                        <rect key="frame" x="155.5" y="463.5" width="63" height="169.5"/>
+                                        <rect key="frame" x="108.5" y="286.5" width="63" height="81.5"/>
                                         <state key="normal" title="Quit Tour"/>
                                     </button>
                                 </subviews>
@@ -65,11 +65,11 @@
             <objects>
                 <viewController id="Emq-BO-dg7" customClass="JoinTourViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UjI-Vq-osD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OQ2-ni-Uid">
-                                <rect key="frame" x="20" y="108" width="324" height="30"/>
+                                <rect key="frame" x="20" y="84" width="230" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="qdi-8L-YZC"/>
                                 </constraints>
@@ -78,38 +78,38 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgi-V3-sbA">
-                                <rect key="frame" x="364" y="108" width="30" height="30"/>
+                                <rect key="frame" x="270" y="84" width="30" height="30"/>
                                 <state key="normal" title="Join"/>
                                 <connections>
                                     <action selector="joinButtonPressed:" destination="Emq-BO-dg7" eventType="touchUpInside" id="ve6-Cr-lE6"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearby Tours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVz-7R-2se">
-                                <rect key="frame" x="20" y="158" width="137" height="27"/>
+                                <rect key="frame" x="20" y="134" width="137" height="27"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yfx-JQ-UVq">
-                                <rect key="frame" x="10" y="195" width="394" height="608"/>
+                                <rect key="frame" x="10" y="171" width="300" height="338"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tourCell" textLabel="92U-T6-NaV" detailTextLabel="iwG-em-8Vs" style="IBUITableViewCellStyleSubtitle" id="bmP-ih-fXH">
-                                        <rect key="frame" x="0.0" y="28" width="394" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="300" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bmP-ih-fXH" id="K6l-TU-VHb">
-                                            <rect key="frame" x="0.0" y="0.0" width="322" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="233" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="92U-T6-NaV">
-                                                    <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iwG-em-8Vs">
-                                                    <rect key="frame" x="20" y="25.5" width="33" height="14.5"/>
+                                                    <rect key="frame" x="15" y="25.5" width="33" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -156,7 +156,7 @@
             <objects>
                 <viewController id="WvM-dl-60n" customClass="CreateTourViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vYm-7q-G2X">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Q5K-Js-Sys"/>
@@ -172,14 +172,14 @@
             <objects>
                 <viewController id="dlM-if-4Eo" customClass="TourDetailsViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yaY-oe-qU5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qQO-O8-uxv">
-                                <rect key="frame" x="10" y="98" width="394" height="723"/>
+                                <rect key="frame" x="10" y="74" width="300" height="419"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ul1-Hr-ZK9" userLabel="Tour Details Stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gqa-U7-w82">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -189,16 +189,16 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MP1-Rp-Zyp" userLabel="Details Text Stack">
-                                                <rect key="frame" x="110" y="0.0" width="284" height="100"/>
+                                                <rect key="frame" x="110" y="0.0" width="190" height="100"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[TOUR NAME]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW9-di-g1y">
-                                                        <rect key="frame" x="0.0" y="0.0" width="284" height="45"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="190" height="45"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by [USER] - 0.0 mi away" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEk-Bf-Qv8">
-                                                        <rect key="frame" x="0.0" y="55" width="284" height="45"/>
+                                                        <rect key="frame" x="0.0" y="55" width="190" height="45"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -211,17 +211,17 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yyE-SA-iEY">
-                                        <rect key="frame" x="0.0" y="110" width="394" height="613"/>
+                                        <rect key="frame" x="0.0" y="110" width="300" height="309"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXn-tC-cOU">
-                                                <rect key="frame" x="0.0" y="0.0" width="394" height="122"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="162.5"/>
                                                 <string key="text">[TOUR DESCRIPTION] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet justo donec enim diam vulputate ut pharetra sit. Tortor consequat id porta nibh venenatis cras. Ut eu sem integer vitae justo eget magna fermentum.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWH-gq-8Tl">
-                                                <rect key="frame" x="0.0" y="122" width="394" height="491"/>
+                                                <rect key="frame" x="0.0" y="162.5" width="300" height="146.5"/>
                                                 <state key="normal" title="Join Tour"/>
                                                 <connections>
                                                     <action selector="joinTourPressed:" destination="dlM-if-4Eo" eventType="touchUpInside" id="kgF-sV-rHU"/>
@@ -261,12 +261,29 @@
             <objects>
                 <viewController id="Ns1-dW-VT0" customClass="PointDetailsViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fYD-Pw-HAE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osK-gS-bHb">
+                                <rect key="frame" x="10" y="74" width="300" height="435"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="U7e-hh-vyB" firstAttribute="bottom" secondItem="osK-gS-bHb" secondAttribute="bottom" constant="10" id="aLd-Ya-rhu"/>
+                            <constraint firstItem="U7e-hh-vyB" firstAttribute="trailing" secondItem="osK-gS-bHb" secondAttribute="trailing" constant="10" id="dQq-mn-y3q"/>
+                            <constraint firstItem="osK-gS-bHb" firstAttribute="top" secondItem="U7e-hh-vyB" secondAttribute="top" constant="10" id="eVx-Fu-EQA"/>
+                            <constraint firstItem="osK-gS-bHb" firstAttribute="leading" secondItem="U7e-hh-vyB" secondAttribute="leading" constant="10" id="wlJ-FZ-3E2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="U7e-hh-vyB"/>
                     </view>
                     <navigationItem key="navigationItem" title="[Point Details]" largeTitleDisplayMode="never" id="fTk-UO-o0Z"/>
+                    <connections>
+                        <outlet property="textLabel" destination="osK-gS-bHb" id="qkf-tb-VSp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r7l-7a-UED" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -277,26 +294,26 @@
             <objects>
                 <tableViewController id="EOs-ac-zlK" customClass="PointListTableViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="C93-Ib-9O7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="pointCell" textLabel="kjF-56-qKy" detailTextLabel="Qd7-Oa-Yqg" style="IBUITableViewCellStyleValue1" id="W1g-GW-JW7">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W1g-GW-JW7" id="piX-LE-hjr">
-                                    <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kjF-56-qKy">
-                                            <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qd7-Oa-Yqg">
-                                            <rect key="frame" x="317" y="12" width="59" height="20.5"/>
+                                            <rect key="frame" x="226" y="12" width="59" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -325,11 +342,11 @@
             <objects>
                 <viewController id="sDu-qO-Dm5" customClass="TourViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RQs-Sw-7td">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dDn-ga-UWG">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="111" width="320" height="408"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -361,14 +378,14 @@
             <objects>
                 <viewController id="FAw-nl-X9B" customClass="ProfileViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lYo-yR-W0Y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CXt-Xk-QYW" userLabel="Main Stack">
-                                <rect key="frame" x="10" y="150" width="394" height="653"/>
+                                <rect key="frame" x="10" y="121" width="300" height="388"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fYD-BR-bI1" userLabel="Top Stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cqt-Tx-pQ1">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -378,7 +395,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[USERNAME]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bp-fC-CmA">
-                                                <rect key="frame" x="110" y="0.0" width="284" height="100"/>
+                                                <rect key="frame" x="110" y="0.0" width="190" height="100"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -389,13 +406,13 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Tours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XL-Fb-pBb">
-                                        <rect key="frame" x="0.0" y="110" width="394" height="31.5"/>
+                                        <rect key="frame" x="0.0" y="110" width="300" height="31.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="y0j-yF-abA" userLabel="My Tours Stack">
-                                        <rect key="frame" x="0.0" y="151.5" width="394" height="501.5"/>
+                                        <rect key="frame" x="0.0" y="151.5" width="300" height="236.5"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -455,7 +472,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="icon-home" id="fr2-ea-XcL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="MeN-aX-cJh">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="91"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -474,7 +491,7 @@
                     <tabBarItem key="tabBarItem" title="Tour" image="icon-tour" id="qtm-V7-PFh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ybG-wV-y6d">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="91"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -493,7 +510,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="icon-profile" id="FpQ-or-ANx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="THA-AO-Vpd">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="91"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

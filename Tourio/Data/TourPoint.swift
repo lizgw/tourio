@@ -19,6 +19,8 @@ class TourPoint: CustomStringConvertible {
     var visited: Bool = false
     var hiddenUntilDiscovered: Bool = false
     var contentHiddenUntilDiscovered: Bool = true
+    var id: String = ""
+    var tourID: String = ""
     
     var description: String {
         return "\(title) at (\(coordinate.latitude), \(coordinate.longitude))"
@@ -33,19 +35,21 @@ class TourPoint: CustomStringConvertible {
         contents = [TourPointContent]()
     }
     
-    init(title: String, subtitle: String, visited: Bool, hiddenUntilDiscovered: Bool, contentHiddenUntilDiscovered: Bool, coordinate: CLLocationCoordinate2D) {
+    init(title: String, subtitle: String, visited: Bool, hiddenUntilDiscovered: Bool, contentHiddenUntilDiscovered: Bool, coordinate: CLLocationCoordinate2D, id: String, tourID: String) {
         self.title = title
         self.subtitle = subtitle
         self.visited = visited
         self.hiddenUntilDiscovered = hiddenUntilDiscovered
         self.contentHiddenUntilDiscovered = contentHiddenUntilDiscovered
         self.coordinate = coordinate
+        self.id = id
+        self.tourID = tourID
         
         contents = [TourPointContent]()
     }
     
     // for building a TourPoint from the database
-    convenience init?(dictionary: [String : Any]) {
+    convenience init?(dictionary: [String : Any], id: String, tourID: String) {
         // get all the data from the dictionary & fail if it's missing anything
         guard let title = dictionary["title"] as? String,
             let subtitle = dictionary["subtitle"] as? String,
@@ -61,7 +65,7 @@ class TourPoint: CustomStringConvertible {
         let coord = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
         // initialize everything
-        self.init(title: title, subtitle: subtitle, visited: visited, hiddenUntilDiscovered: hiddenUntilDiscovered, contentHiddenUntilDiscovered: contentHiddenUntilDiscovered, coordinate: coord)
+        self.init(title: title, subtitle: subtitle, visited: visited, hiddenUntilDiscovered: hiddenUntilDiscovered, contentHiddenUntilDiscovered: contentHiddenUntilDiscovered, coordinate: coord, id: id, tourID: tourID)
     }
     
     // --- methods ---

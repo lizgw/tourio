@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import Firebase
 
 class PointDetailsViewController: UIViewController {
 
+    @IBOutlet weak var textLabel: UILabel!
     var point: TourPoint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         setupDisplay()
     }
     
@@ -22,6 +28,21 @@ class PointDetailsViewController: UIViewController {
         guard let point = point else { return }
         
         title = point.title
+        
+        if point.id == "" {
+            textLabel.text = "No information was entered for this point."
+        } else {
+            // get the data from the database & display the text!
+            let tourCollection = Firestore.firestore().collection("testTours")
+            let tour = tourCollection.document(point.tourID)
+            let pointDoc = tour.collection("points").document(point.id)
+            
+            pointDoc.getDocument() { (docSnapshot, err) in
+                if let docSnapshot = docSnapshot, docSnapshot.exists {
+                    print(docSnapshot.data())
+                }
+            }
+        }
     }
 
 }

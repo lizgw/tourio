@@ -57,6 +57,8 @@ class PointListTableViewController: UITableViewController {
             // show the distance from the current location
             if let currentCoordinate = currentCoordinate {
                 cell.detailTextLabel?.text = "\(point.getDistanceAway(from: currentCoordinate)) ft away"
+                //cell.detailTextLabel?.text = "? ft away"
+                //print(point)
             } else {
                 cell.detailTextLabel?.text = "? ft away"
             }

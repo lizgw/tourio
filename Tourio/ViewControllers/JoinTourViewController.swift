@@ -81,7 +81,7 @@ class JoinTourViewController: UIViewController, UITableViewDataSource, UITableVi
                         } else {
                             for doc in querySnapshot!.documents {
                                 // create a point
-                                if let point = TourPoint(dictionary: doc.data()) {
+                                if let point = TourPoint(dictionary: doc.data(), id: doc.documentID, tourID: document.documentID) {
                                     points.append(point)
                                 } else {
                                     print("error creating point")
