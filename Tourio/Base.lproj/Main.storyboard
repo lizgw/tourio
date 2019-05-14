@@ -38,6 +38,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPE-Xg-BhX">
                                         <rect key="frame" x="108.5" y="286.5" width="63" height="81.5"/>
                                         <state key="normal" title="Quit Tour"/>
+                                        <connections>
+                                            <action selector="quitTourButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8A7-Tz-wGx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

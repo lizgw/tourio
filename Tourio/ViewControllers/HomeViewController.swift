@@ -20,6 +20,12 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func quitTourButtonPressed(_ sender: Any) {
+        // remove the current tour
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.currentTour = nil
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         // enable the quit button only if we're on a tour
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

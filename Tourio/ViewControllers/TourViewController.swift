@@ -72,13 +72,15 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
         currentTour = appDelegate.currentTour
         
         // don't try to add points from the tour if it doesn't exist
-        guard let currentTour = currentTour else { return }
-        
-        // clear the previous annotations
-        let annotations = mapView.annotations.filter {
-            $0 !== self.mapView.userLocation
+        guard let currentTour = currentTour else {
+            // remove all points
+            clearAnnotations()
+            
+            // don't add any points
+            return
         }
-        mapView.removeAnnotations(annotations)
+        
+        clearAnnotations()
         
         print(currentTour.getPointList())
         for point in currentTour.getPointList() {
@@ -87,6 +89,14 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         pointsAdded = true
+    }
+    
+    func clearAnnotations() {
+        // clear the previous annotations
+        let annotations = mapView.annotations.filter {
+            $0 !== self.mapView.userLocation
+        }
+        mapView.removeAnnotations(annotations)
     }
     
     // build a demo tour for debugging
