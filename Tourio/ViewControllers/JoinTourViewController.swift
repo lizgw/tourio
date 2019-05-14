@@ -69,7 +69,9 @@ class JoinTourViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func feetToMiles(feet: Double) -> Double {
-        return feet * 0.000189394
+        let mi = feet * 0.000189394
+        let accuracy = 100.0
+        return Double(floor(mi * accuracy) / accuracy) // fancy math trick to truncate the double
     }
     
     func fetchTours() {
