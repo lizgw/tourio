@@ -13,6 +13,7 @@ class PointListTableViewController: UITableViewController {
 
     var currentTour: Tour?
     var currentCoordinate: CLLocationCoordinate2D?
+    @IBOutlet weak var addButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +23,29 @@ class PointListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        addButton.isEnabled = false
+        
+        showEditTools()
     }
 
+    func showEditTools() {
+        guard let tour = currentTour else {
+            return
+        }
+        
+        if tour.createdBy == "Ryan" {
+            addButton.isEnabled = true
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // only 1 section here
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             // one for each point in the tour

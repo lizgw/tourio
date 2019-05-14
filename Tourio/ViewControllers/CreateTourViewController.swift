@@ -13,6 +13,7 @@ class CreateTourViewController: UIViewController {
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var descriptionField: UITextView!
+    @IBOutlet weak var orderedSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class CreateTourViewController: UIViewController {
             return
         }
         
-        var tour = Tour(createdBy: "Ryan", isOrdered: false)
+        let tour = Tour(createdBy: "Ryan", isOrdered: orderedSwitch.isOn)
         tour.name = nameField.text!
         tour.desc = descriptionField.text
         
@@ -50,8 +51,9 @@ class CreateTourViewController: UIViewController {
             }
         }
         ref!.setData([
-            "Description": descriptionField.text,
-            "Creator": "Ryan"
+            "title": nameField.text!,
+            "description": descriptionField.text,
+            "createdBy": "Ryan"
             ])
         
         ref?.collection("points").addDocument(data: ["Name": "Point A"])

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03D1BD152285FF2F0009BB82 /* AddPointMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D1BD142285FF2F0009BB82 /* AddPointMapViewController.swift */; };
+		03D1BD17228604CE0009BB82 /* AddPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D1BD16228604CE0009BB82 /* AddPointViewController.swift */; };
 		23C8353E0DC4916A0A5C2FE2 /* Pods_Tourio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AEC25636AC231C91FCDF190 /* Pods_Tourio.framework */; };
 		76166C992267A6FB00DC367A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76166C982267A6FB00DC367A /* GoogleService-Info.plist */; };
 		76268759224D4AE600BBD630 /* PointListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76268758224D4AE600BBD630 /* PointListTableViewController.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03D1BD142285FF2F0009BB82 /* AddPointMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPointMapViewController.swift; sourceTree = "<group>"; };
+		03D1BD16228604CE0009BB82 /* AddPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPointViewController.swift; sourceTree = "<group>"; };
 		2AEC25636AC231C91FCDF190 /* Pods_Tourio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tourio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3D57D735175CF28B6874FF /* Pods-Tourio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tourio.debug.xcconfig"; path = "Target Support Files/Pods-Tourio/Pods-Tourio.debug.xcconfig"; sourceTree = "<group>"; };
 		76166C982267A6FB00DC367A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 		76D8ED7A220CBAE900BBCB2C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				03D1BD142285FF2F0009BB82 /* AddPointMapViewController.swift */,
+				03D1BD16228604CE0009BB82 /* AddPointViewController.swift */,
 				7678B52E220A29A800E693D3 /* CreateTourViewController.swift */,
 				7678B52D220A29A800E693D3 /* HomeViewController.swift */,
 				7678B523220A29A700E693D3 /* JoinTourViewController.swift */,
@@ -151,7 +157,6 @@
 				6E3D57D735175CF28B6874FF /* Pods-Tourio.debug.xcconfig */,
 				B7F2FA7B125B41CB3E48598D /* Pods-Tourio.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -290,6 +295,7 @@
 			files = (
 				7678B53B220A29A800E693D3 /* TourPointContent.swift in Sources */,
 				7678B536220A29A800E693D3 /* Tour.swift in Sources */,
+				03D1BD152285FF2F0009BB82 /* AddPointMapViewController.swift in Sources */,
 				7678B53D220A29A800E693D3 /* CreateTourViewController.swift in Sources */,
 				7678B539220A29A800E693D3 /* TourDetailsViewController.swift in Sources */,
 				7678B53F220A29A800E693D3 /* TourPointCollection.swift in Sources */,
@@ -298,6 +304,7 @@
 				7678B53E220A29A800E693D3 /* MapPointView.swift in Sources */,
 				7678B531220A29A800E693D3 /* TourPoint.swift in Sources */,
 				764199DA22023B4300D64391 /* AppDelegate.swift in Sources */,
+				03D1BD17228604CE0009BB82 /* AddPointViewController.swift in Sources */,
 				76268759224D4AE600BBD630 /* PointListTableViewController.swift in Sources */,
 				7678B533220A29A800E693D3 /* ProfileViewController.swift in Sources */,
 				7678B535220A29A800E693D3 /* PointDetailsViewController.swift in Sources */,

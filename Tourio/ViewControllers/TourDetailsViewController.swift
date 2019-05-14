@@ -16,6 +16,7 @@ class TourDetailsViewController: UIViewController {
     @IBOutlet weak var tourNameLabel: UILabel!
     @IBOutlet weak var tourDetailsLabel: UILabel!
     @IBOutlet weak var tourDescriptionLabel: UILabel!
+    @IBOutlet weak var addPointsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,11 @@ class TourDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationItem.rightBarButtonItem!.isEnabled = false
+        addPointsButton.isEnabled = false
+        
         showTourDetails()
+        showEditTools()
     }
     
     func showTourDetails() {
@@ -34,8 +39,26 @@ class TourDetailsViewController: UIViewController {
         tourDescriptionLabel.text = tour.desc
     }
     
+    func showEditTools() {
+        //TODO: Change "Ryan" to be current username.
+        guard tour.createdBy == "Ryan" else {
+            return
+        }
+        
+        navigationItem.rightBarButtonItem!.isEnabled = true
+        addPointsButton.isEnabled = true
+    }
+    
     @IBAction func joinTourPressed(_ sender: Any) {
         print("Join Tour pressed")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? PointListTableViewController else {
+            return
+        }
+        
+        destination.currentTour = tour
     }
 
 }

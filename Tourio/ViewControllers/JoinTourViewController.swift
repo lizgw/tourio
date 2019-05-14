@@ -49,16 +49,18 @@ class JoinTourViewController: UIViewController, TourListingViewProtocol {
         var tourList = [Tour]()
         
         // TEMPORARY: make some random tours
-        for _ in 1...6
-        {
-            let randUsername = "user\(arc4random_uniform(100))"
-            let isOrdered: Bool = arc4random_uniform(2) == 0 ? true : false
-            let tour = Tour(createdBy: randUsername, isOrdered: isOrdered)
-            tour.name = "Tour \(arc4random_uniform(100))"
-            tour.iconPath = "UserIcon"
-            tour.desc = "This is the tour's default description."
-            tourList.append(tour)
-        }
+//        for _ in 1...6
+//        {
+//            let randUsername = "user\(arc4random_uniform(100))"
+//            let isOrdered: Bool = arc4random_uniform(2) == 0 ? true : false
+//            let tour = Tour(createdBy: randUsername, isOrdered: isOrdered)
+//            tour.name = "Tour \(arc4random_uniform(100))"
+//            tour.iconPath = "UserIcon"
+//            tour.desc = "This is the tour's default description."
+//            tourList.append(tour)
+//        }
+        
+        
         
         return tourList
     }
