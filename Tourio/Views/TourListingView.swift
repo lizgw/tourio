@@ -70,7 +70,7 @@ protocol TourListingViewProtocol {
         
         // add the tour details (user & distance)
         detailsLabel = UILabel()
-        detailsLabel.text = "by \(tour.createdBy) - \(tour.distanceAway) mi away"
+        detailsLabel.text = "by \(tour.createdBy) - ? ft away"
         detailsLabel.font = detailsLabel.font.withSize(12.0)
         textStackView.addArrangedSubview(detailsLabel) // add to stack view
         

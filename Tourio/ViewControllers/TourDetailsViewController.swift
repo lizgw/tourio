@@ -30,7 +30,17 @@ class TourDetailsViewController: UIViewController {
     func showTourDetails() {
         tourIcon.image = UIImage(named: tour.iconPath)
         tourNameLabel.text = tour.name
-        tourDetailsLabel.text = "by \(tour.createdBy) - \(tour.distanceAway) mi away"
+        
+        // get the tour's distance away
+        // get the delegate
+        var distAwayString = "?"
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let lastCoord = delegate.lastCoordinate
+        if let lastCoord = lastCoord {
+            distAwayString = "\(tour.getDistanceAway(userPos: lastCoord))"
+        }
+        tourDetailsLabel.text = "by \(tour.createdBy) - \(distAwayString) mi away"
+        
         tourDescriptionLabel.text = tour.desc
     }
     

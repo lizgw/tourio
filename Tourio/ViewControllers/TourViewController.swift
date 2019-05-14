@@ -144,8 +144,12 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
     
     // get the last location from the manager
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        /*let lastLocation = locations[locations.count - 1]
-        print(lastLocation.coordinate)*/
+        // get the last location
+        let lastLocation = locations[locations.count - 1]
+        
+        // get the delegate
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.lastCoordinate = lastLocation.coordinate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class Tour : CustomStringConvertible {
     
@@ -23,11 +24,6 @@ class Tour : CustomStringConvertible {
     var pointCollection: TourPointCollection
     
     // --- computed properties ---
-    // distance from current location to first point (if ordered) or nearest point
-    var distanceAway: Double {
-        return 0.0
-    }
-    
     // linear distance from A to B to C... etc.
     // best for ordered tours
     var totalDistanceCovered: Double {
@@ -106,6 +102,21 @@ class Tour : CustomStringConvertible {
     
     func addPoint(_ point: TourPoint) {
         pointCollection.addPoint(point)
+    }
+    
+    // distance from current location to first point (if ordered) or nearest point
+    func getDistanceAway(userPos: CLLocationCoordinate2D) -> Double {
+        // find the nearest point to the user's pos
+        var closestDist = Double.infinity // will be replaced by the closest dist
+        for point in pointCollection.points {
+            let pointDist = point.getDistanceAway(from: userPos)
+            if pointDist < closestDist {
+                closestDist = pointDist
+            }
+        }
+        
+        // use that distance
+        return closestDist
     }
     
 }

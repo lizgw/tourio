@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
+import MapKit
 
 class JoinTourViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -47,9 +48,28 @@ class JoinTourViewController: UIViewController, UITableViewDataSource, UITableVi
         let tour = tourList[indexPath.row]
         
         cell.textLabel?.text = tour.name
-        cell.detailTextLabel?.text = "by \(tour.createdBy) - \(tour.distanceAway) mi away"
+        // get the tour's distance away
+        // get the delegate
+        var distAwayString = "?"
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let lastCoord = delegate.lastCoordinate
+        if let lastCoord = lastCoord {
+            let dist = tour.getDistanceAway(userPos: lastCoord)
+            // if it's farther away than a mile
+            if dist > 5280 {
+                distAwayString = "\(feetToMiles(feet: dist)) mi"
+            } else {
+                distAwayString = "\(dist) ft"
+            }
+        }
+        
+        cell.detailTextLabel?.text = "by \(tour.createdBy) - \(distAwayString) away"
         
         return cell
+    }
+    
+    func feetToMiles(feet: Double) -> Double {
+        return feet * 0.000189394
     }
     
     func fetchTours() {
