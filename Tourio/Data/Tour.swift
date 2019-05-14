@@ -105,7 +105,11 @@ class Tour : CustomStringConvertible {
     }
     
     // distance from current location to first point (if ordered) or nearest point
-    func getDistanceAway(userPos: CLLocationCoordinate2D) -> Double {
+    func getDistanceAwayString() -> String {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        
+        guard let userPos = delegate.locManager?.location?.coordinate else { return "?" }
+        
         // find the nearest point to the user's pos
         var closestDist = Double.infinity // will be replaced by the closest dist
         for point in pointCollection.points {
@@ -115,8 +119,22 @@ class Tour : CustomStringConvertible {
             }
         }
         
+        var distAwayString = ""
+        // if it's farther away than a mile
+        if closestDist > 5280 {
+            distAwayString = "\(feetToMiles(feet: closestDist)) mi"
+        } else {
+            distAwayString = "\(closestDist) ft"
+        }
+        
         // use that distance
-        return closestDist
+        return distAwayString
+    }
+    
+    func feetToMiles(feet: Double) -> Double {
+        let mi = feet * 0.000189394
+        let accuracy = 100.0
+        return Double(floor(mi * accuracy) / accuracy) // truncate double
     }
     
 }

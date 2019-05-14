@@ -32,14 +32,7 @@ class TourDetailsViewController: UIViewController {
         tourNameLabel.text = tour.name
         
         // get the tour's distance away
-        // get the delegate
-        var distAwayString = "?"
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        let lastCoord = delegate.locManager?.location?.coordinate
-        if let lastCoord = lastCoord {
-            distAwayString = "\(tour.getDistanceAway(userPos: lastCoord))"
-        }
-        tourDetailsLabel.text = "by \(tour.createdBy) - \(distAwayString) mi away"
+        tourDetailsLabel.text = "by \(tour.createdBy) - \(tour.getDistanceAwayString()) away"
         
         tourDescriptionLabel.text = tour.desc
     }

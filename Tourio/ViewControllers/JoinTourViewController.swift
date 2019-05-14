@@ -48,30 +48,9 @@ class JoinTourViewController: UIViewController, UITableViewDataSource, UITableVi
         let tour = tourList[indexPath.row]
         
         cell.textLabel?.text = tour.name
-        // get the tour's distance away
-        // get the delegate
-        var distAwayString = "?"
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        let lastCoord = delegate.locManager?.location?.coordinate
-        if let lastCoord = lastCoord {
-            let dist = tour.getDistanceAway(userPos: lastCoord)
-            // if it's farther away than a mile
-            if dist > 5280 {
-                distAwayString = "\(feetToMiles(feet: dist)) mi"
-            } else {
-                distAwayString = "\(dist) ft"
-            }
-        }
-        
-        cell.detailTextLabel?.text = "by \(tour.createdBy) - \(distAwayString) away"
+        cell.detailTextLabel?.text = "by \(tour.createdBy) - \(tour.getDistanceAwayString()) away"
         
         return cell
-    }
-    
-    func feetToMiles(feet: Double) -> Double {
-        let mi = feet * 0.000189394
-        let accuracy = 100.0
-        return Double(floor(mi * accuracy) / accuracy) // fancy math trick to truncate the double
     }
     
     func fetchTours() {
