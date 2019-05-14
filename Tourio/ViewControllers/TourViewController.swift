@@ -10,12 +10,12 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class TourViewController: UIViewController, CLLocationManagerDelegate {
+class TourViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
-    var locManager: CLLocationManager!
     var currentTour: Tour? = nil
     var pointsAdded = false
+    var locManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +30,11 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationSetup() {
-        locManager = CLLocationManager()
-        locManager.desiredAccuracy = kCLLocationAccuracyKilometer
-        locManager.delegate = self
-        locManager.requestWhenInUseAuthorization()
-        locManager.startUpdatingLocation()
+        // get the delegate
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        if let locMgr = delegate.locManager {
+            locManager = locMgr
+        }
     }
     
     func mapSetup() {
@@ -64,9 +64,7 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     // add the annotations for the current tour
-    func addPoints() {
-        //createDemoTour() // for testing
-        
+    func addPoints() {        
         // get the current tour from the delegate!!
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         currentTour = appDelegate.currentTour
@@ -97,59 +95,6 @@ class TourViewController: UIViewController, CLLocationManagerDelegate {
             $0 !== self.mapView.userLocation
         }
         mapView.removeAnnotations(annotations)
-    }
-    
-    // build a demo tour for debugging
-    func createDemoTour() {
-        // create the tour
-        currentTour = Tour(createdBy: "testuser", isOrdered: true)
-        
-        // make sure it exists & configure it...
-        guard let currentTour = currentTour else { return }
-        
-        if let currentPos = locManager.location?.coordinate {
-            // create a bunch of random points
-            let letters = ["a", "b", "c", "d", "e", "f", "g"]
-            for i in 1...5 {
-                // generate a random fraction
-                let isNegative = arc4random_uniform(2)
-                let isNegative2 = arc4random_uniform(2)
-                
-                var randNum: Double = Double(arc4random_uniform(100)) * 0.00001
-                var randNum2 = randNum
-                if isNegative < 1 {
-                    randNum *= -1
-                }
-                if isNegative2 < 1 {
-                    randNum2 *= -1
-                }
-                // modify the current coordinates a bit
-                let lat = currentPos.latitude + randNum
-                let long = currentPos.longitude + randNum2
-                
-                // make a new point and add it to the tour
-                let point = TourPoint(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long))
-                point.title = "Point \(letters[i - 1].uppercased())"
-                currentTour.addPoint(point)
-            }
-        } else {
-            print("no location???")
-        }
-    }
-    
-    // handle errors from the location manager
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
-    }
-    
-    // get the last location from the manager
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        // get the last location
-        let lastLocation = locations[locations.count - 1]
-        
-        // get the delegate
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        delegate.lastCoordinate = lastLocation.coordinate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

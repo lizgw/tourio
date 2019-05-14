@@ -52,7 +52,7 @@ class JoinTourViewController: UIViewController, UITableViewDataSource, UITableVi
         // get the delegate
         var distAwayString = "?"
         let delegate = UIApplication.shared.delegate as! AppDelegate
-        let lastCoord = delegate.lastCoordinate
+        let lastCoord = delegate.locManager?.location?.coordinate
         if let lastCoord = lastCoord {
             let dist = tour.getDistanceAway(userPos: lastCoord)
             // if it's farther away than a mile

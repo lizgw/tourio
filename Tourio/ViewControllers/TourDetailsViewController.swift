@@ -35,7 +35,7 @@ class TourDetailsViewController: UIViewController {
         // get the delegate
         var distAwayString = "?"
         let delegate = UIApplication.shared.delegate as! AppDelegate
-        let lastCoord = delegate.lastCoordinate
+        let lastCoord = delegate.locManager?.location?.coordinate
         if let lastCoord = lastCoord {
             distAwayString = "\(tour.getDistanceAway(userPos: lastCoord))"
         }
