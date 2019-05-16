@@ -41,7 +41,6 @@ class TourDetailsViewController: UIViewController {
         // set it in the delegate
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.currentTour = tour
-        print("joined tour \(tour.id)")
     }
 
 }

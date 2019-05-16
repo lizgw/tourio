@@ -80,7 +80,6 @@ class TourViewController: UIViewController {
         
         clearAnnotations()
         
-        print(currentTour.getPointList())
         for point in currentTour.getPointList() {
             // only display the point if it's hidden and within range OR not hidden
             if point.withinRange() {

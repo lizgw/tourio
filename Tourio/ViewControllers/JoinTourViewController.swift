@@ -22,9 +22,6 @@ class JoinTourViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // setup table view
         nearbyTableView.dataSource = self
-        
-        // get nearby tours - TODO: move this to a different place with network requests
-        populateNearbyToursList()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,7 +82,7 @@ class JoinTourViewController: UIViewController, UITableViewDataSource, UITableVi
                                 if let point = TourPoint(dictionary: doc.data(), id: doc.documentID, tourID: document.documentID) {
                                     points.append(point)
                                 } else {
-                                    print("error creating point")
+                                    print("error creating point \(doc.documentID) for tour \(document.documentID)")
                                 }
                             }
                             
@@ -93,10 +90,10 @@ class JoinTourViewController: UIViewController, UITableViewDataSource, UITableVi
                             if let newTour = Tour(dictionary: data, pointCollection: points, id: document.documentID) {
                                 self.tourList.append(newTour)
                             } else {
-                                print("Tour init failed")
+                                print("Tour init failed for \(document.documentID)")
                             }
                             
-                            self.populateNearbyToursList()
+                            self.nearbyTableView.reloadData()
                         }
                     }
                 } // end for each document
@@ -110,13 +107,7 @@ class JoinTourViewController: UIViewController, UITableViewDataSource, UITableVi
                 return true
             }
         }
-        
         return false
-    }
-    
-    func populateNearbyToursList() {
-        print(tourList)
-        nearbyTableView.reloadData()
     }
     
     @IBAction func joinButtonPressed(_ sender: Any) {
