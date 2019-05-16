@@ -82,8 +82,10 @@ class TourViewController: UIViewController {
         
         print(currentTour.getPointList())
         for point in currentTour.getPointList() {
-            mapView.addAnnotation(point.getMapPointView())
-            print("added point \(point.id)")
+            // only display the point if it's hidden and within range OR not hidden
+            if point.withinRange() {
+                mapView.addAnnotation(point.getMapPointView())
+            }
         }
         
         pointsAdded = true

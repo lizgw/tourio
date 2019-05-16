@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import UIKit
 
 class TourPoint: CustomStringConvertible {
     
@@ -72,6 +73,26 @@ class TourPoint: CustomStringConvertible {
     // returns a MapPointView that represents this point
     func getMapPointView() -> MapPointView {
         return MapPointView(title: title, subtitle: subtitle, coordinate: coordinate)
+    }
+    
+    func withinRange() -> Bool {
+        // if we're not hiding it, it's automatically in range
+        if (!hiddenUntilDiscovered) {
+           return true
+        // now we need to see if it's close enough to display
+        } else {
+            let rangeDist = 30.0 // ft
+            // figure out where the user is
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            guard let userCoord = delegate.locManager?.location?.coordinate else { return false }
+            let userDist = getDistanceAway(from: userCoord)
+            if userDist < rangeDist {
+                return true
+            } else {
+                return false
+            }
+        }
+        
     }
     
     func getDistanceAway(from otherCoordinate: CLLocationCoordinate2D) -> Double {
