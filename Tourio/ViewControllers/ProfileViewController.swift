@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, TourListingViewProtocol {
+class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -31,37 +31,6 @@ class ProfileViewController: UIViewController, TourListingViewProtocol {
         
         // get the profile image
         profileImageView.image = UIImage(named: "UserIcon", in: nil, compatibleWith: nil)
-        
-        // create a few random tours to show in the profile
-        for tourNum in 1...4 {
-            // make a random tour
-            let tour = Tour(createdBy: username, isOrdered: true)
-            tour.name = "Tour \(tourNum)\(Int.random(in: 1...100))"
-            tour.desc = "This is a basic tour description"
-            tour.iconPath = "UserIcon"
-            
-            // add the TourListingView to the stack view
-            let tourView = tour.getTourListingView()
-            tourView.delegate = self
-            myToursStackView.addArrangedSubview(tourView)
-        }
-    }
-    
-    func tourListingViewTapped(tour: Tour) {
-        // go to the details screen when a listing view is tapped
-        performSegue(withIdentifier: "ProfileToDetailsSegue", sender: tour)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // if we're going to the details segue
-        if (segue.identifier == "ProfileToDetailsSegue") {
-            
-            // check type for view controller and the Tour
-            guard let detailsVC = segue.destination as? TourDetailsViewController,
-                let tourObj = sender as? Tour else { return }
-            // set the view controller's tour property
-            detailsVC.tour = tourObj
-        }
     }
     
 }

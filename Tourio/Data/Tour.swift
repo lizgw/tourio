@@ -88,14 +88,6 @@ class Tour : CustomStringConvertible {
     
     // --- methods ---
     
-    // returns a TourListingView representing this Tour
-    func getTourListingView() -> TourListingView {
-        // init a TourListingView
-        let tourView = TourListingView(tour: self)
-        
-        return tourView
-    }
-    
     func getPointList() -> [TourPoint] {
         return pointCollection.points
     }
