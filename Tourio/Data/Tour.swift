@@ -122,19 +122,21 @@ class Tour : CustomStringConvertible {
         var distAwayString = ""
         // if it's farther away than a mile
         if closestDist > 5280 {
-            distAwayString = "\(feetToMiles(feet: closestDist)) mi"
+            distAwayString = "\(Tour.truncateDouble(num: Tour.feetToMiles(feet: closestDist), accuracy: 100)) mi"
         } else {
-            distAwayString = "\(closestDist) ft"
+            distAwayString = "\(Tour.truncateDouble(num: closestDist, accuracy: 100)) ft"
         }
         
         // use that distance
         return distAwayString
     }
     
-    func feetToMiles(feet: Double) -> Double {
-        let mi = feet * 0.000189394
-        let accuracy = 100.0
-        return Double(floor(mi * accuracy) / accuracy) // truncate double
+    static func feetToMiles(feet: Double) -> Double {
+        return feet * 0.000189394
+    }
+    
+    static func truncateDouble(num: Double, accuracy: Double) -> Double {
+        return Double(floor(num * accuracy) / accuracy)
     }
     
 }

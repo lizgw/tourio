@@ -78,9 +78,18 @@ class TourPoint: CustomStringConvertible {
         // create 2 locations
         let currentLoc = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         let pointLoc = CLLocation(latitude: otherCoordinate.latitude, longitude: otherCoordinate.longitude)
-        let distVal = currentLoc.distance(from: pointLoc) * 3.28084 // meters to ft
-        let accuracy = 100.0
-        return Double(floor(distVal * accuracy) / accuracy) // fancy math trick to truncate the double
+        return currentLoc.distance(from: pointLoc) * 3.28084 // meters to ft
+    }
+    
+    func getDistanceAwayString(from otherCoordinate: CLLocationCoordinate2D) -> String {
+        let dist = getDistanceAway(from: otherCoordinate)
+        
+        // convert to mi if too big
+        if (dist > 5280) {
+            return "\(Tour.truncateDouble(num: Tour.feetToMiles(feet: dist), accuracy: 100)) mi away"
+        } else {
+            return "\(Tour.truncateDouble(num: dist, accuracy: 100)) ft away"
+        }
     }
     
 }
