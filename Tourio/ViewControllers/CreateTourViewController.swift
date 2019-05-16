@@ -34,6 +34,7 @@ class CreateTourViewController: UIViewController {
         let tour = Tour(createdBy: "Ryan", isOrdered: orderedSwitch.isOn)
         tour.name = nameField.text!
         tour.desc = descriptionField.text
+        tour.isOrdered = orderedSwitch.isOn
         
         let db = Firestore.firestore()
         
@@ -41,19 +42,12 @@ class CreateTourViewController: UIViewController {
         
         ref = db.collection("testTours").document(tour.name)
         
-        db.collection("cities").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                }
-            }
-        }
         ref!.setData([
-            "title": nameField.text!,
-            "description": descriptionField.text,
-            "createdBy": "Ryan"
+            "name": nameField.text!,
+            "desc": descriptionField.text,
+            "createdBy": "Ryan",
+            "iconPath": "",
+            "isOrdered": orderedSwitch.isOn
             ])
         
         ref?.collection("points").addDocument(data: ["Name": "Point A"])

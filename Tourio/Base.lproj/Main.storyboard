@@ -395,7 +395,7 @@
             </objects>
             <point key="canvasLocation" x="806" y="1848"/>
         </scene>
-        <!--Add Point View Controller-->
+        <!--Add Point-->
         <scene sceneID="rGa-Nx-Da9">
             <objects>
                 <viewController id="3je-tU-CSJ" customClass="AddPointViewController" customModule="Tourio" customModuleProvider="target" sceneMemberID="viewController">
@@ -473,6 +473,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UoO-ZX-JgW"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Point" id="n1T-yM-rQC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="MB4-bH-8fT">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="3je-tU-CSJ" id="5Dx-lN-etg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="coordinateLabel" destination="seX-nA-AWv" id="oVg-Et-6QY"/>
                         <outlet property="locationLabel" destination="k1p-5m-De2" id="Bfl-Qg-KhP"/>
@@ -703,7 +710,7 @@
         <image name="icon-tour" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HNA-lJ-tvL"/>
+        <segue reference="GK9-Z8-FXy"/>
         <segue reference="q1S-CB-h6T"/>
     </inferredMetricsTieBreakers>
 </document>
