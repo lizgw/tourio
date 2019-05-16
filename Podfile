@@ -8,6 +8,7 @@ target 'Tourio' do
   # Pods for Tourio
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
 
 
 end
