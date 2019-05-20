@@ -26,6 +26,9 @@
 		7678B53D220A29A800E693D3 /* CreateTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B52E220A29A800E693D3 /* CreateTourViewController.swift */; };
 		7678B53E220A29A800E693D3 /* MapPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B52F220A29A800E693D3 /* MapPointView.swift */; };
 		7678B53F220A29A800E693D3 /* TourPointCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7678B530220A29A800E693D3 /* TourPointCollection.swift */; };
+		AB29BF1F2285FD1E00AB6B95 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29BF1E2285FD1E00AB6B95 /* LoginViewController.swift */; };
+		AB29BF212285FDBE00AB6B95 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29BF202285FDBE00AB6B95 /* StartViewController.swift */; };
+		AB29BF232286026B00AB6B95 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29BF222286026B00AB6B95 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,9 @@
 		7678B52E220A29A800E693D3 /* CreateTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTourViewController.swift; path = ../ViewControllers/CreateTourViewController.swift; sourceTree = "<group>"; };
 		7678B52F220A29A800E693D3 /* MapPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPointView.swift; sourceTree = "<group>"; };
 		7678B530220A29A800E693D3 /* TourPointCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourPointCollection.swift; sourceTree = "<group>"; };
+		AB29BF1E2285FD1E00AB6B95 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AB29BF202285FDBE00AB6B95 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		AB29BF222286026B00AB6B95 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B7F2FA7B125B41CB3E48598D /* Pods-Tourio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tourio.release.xcconfig"; path = "Target Support Files/Pods-Tourio/Pods-Tourio.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +125,9 @@
 				7678B524220A29A800E693D3 /* ProfileViewController.swift */,
 				7678B52A220A29A800E693D3 /* TourDetailsViewController.swift */,
 				7678B525220A29A800E693D3 /* TourViewController.swift */,
+				AB29BF1E2285FD1E00AB6B95 /* LoginViewController.swift */,
+				AB29BF202285FDBE00AB6B95 /* StartViewController.swift */,
+				AB29BF222286026B00AB6B95 /* SignUpViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -253,6 +262,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Tourio/Pods-Tourio-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
@@ -265,6 +275,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
@@ -290,11 +301,15 @@
 				7678B539220A29A800E693D3 /* TourDetailsViewController.swift in Sources */,
 				7678B53F220A29A800E693D3 /* TourPointCollection.swift in Sources */,
 				7678B534220A29A800E693D3 /* TourViewController.swift in Sources */,
+				AB29BF232286026B00AB6B95 /* SignUpViewController.swift in Sources */,
+				7678B53A220A29A800E693D3 /* TourListingView.swift in Sources */,
 				7678B53E220A29A800E693D3 /* MapPointView.swift in Sources */,
 				7678B531220A29A800E693D3 /* TourPoint.swift in Sources */,
 				764199DA22023B4300D64391 /* AppDelegate.swift in Sources */,
+				AB29BF212285FDBE00AB6B95 /* StartViewController.swift in Sources */,
 				76268759224D4AE600BBD630 /* PointListTableViewController.swift in Sources */,
 				7678B533220A29A800E693D3 /* ProfileViewController.swift in Sources */,
+				AB29BF1F2285FD1E00AB6B95 /* LoginViewController.swift in Sources */,
 				7678B535220A29A800E693D3 /* PointDetailsViewController.swift in Sources */,
 				7678B53C220A29A800E693D3 /* HomeViewController.swift in Sources */,
 				7678B532220A29A800E693D3 /* JoinTourViewController.swift in Sources */,
