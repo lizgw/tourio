@@ -20,6 +20,11 @@ class TourDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if navigationController?.viewControllers.first is CreateTourViewController {
+            navigationController?.viewControllers.first?.dismiss(animated: false, completion: nil)
+            navigationController?.viewControllers.removeFirst()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -11,6 +11,9 @@ import MapKit
 
 class AddPointViewController: UIViewController {
 
+    @IBOutlet weak var subtitleBox: UITextField!
+    @IBOutlet weak var descBox: UITextView!
+    
     var coordinate : CLLocationCoordinate2D?
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var coordinateLabel: UILabel!
@@ -18,7 +21,10 @@ class AddPointViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        subtitleBox.layer.borderColor = UIColor.lightGray.cgColor
+        subtitleBox.layer.borderWidth = 1
+        descBox.layer.borderColor = UIColor.lightGray.cgColor
+        descBox.layer.borderWidth = 1
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,10 +39,6 @@ class AddPointViewController: UIViewController {
         
         coordinateLabel.isEnabled = true
         coordinateLabel.text = "\(Double(round(1000 * coordinate.latitude)/1000)), \(Double(round(1000*coordinate.longitude)/1000))"
-        
-    }
-
-    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
         
     }
     
