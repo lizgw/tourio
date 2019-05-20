@@ -51,16 +51,33 @@ class TourPoint: CustomStringConvertible {
     
     // for building a TourPoint from the database
     convenience init?(dictionary: [String : Any], id: String, tourID: String) {
+        
         // get all the data from the dictionary & fail if it's missing anything
         guard let title = dictionary["title"] as? String,
-            let subtitle = dictionary["subtitle"] as? String,
-            let visited = dictionary["visited"] as? Bool,
-            let hiddenUntilDiscovered = dictionary["hiddenUntilDiscovered"] as? Bool,
-            let contentHiddenUntilDiscovered = dictionary["contentHiddenUntilDiscovered"] as? Bool,
             let latitude = dictionary["latitude"] as? Double,
             let longitude = dictionary["longitude"] as? Double
             // TODO: handle contents collection
             else { return nil }
+        
+        // set defaults for non-essential values
+        var subtitle = ""
+        var visited = false
+        var hiddenUntilDiscovered = false
+        var contentHiddenUntilDiscovered = true
+        
+        // read in these values if they exist
+        if let subtitleData = dictionary["subtitle"] as? String {
+            subtitle = subtitleData
+        }
+        if let visitedData = dictionary["visited"] as? Bool {
+            visited = visitedData
+        }
+        if let hiddenUntilDiscoveredData = dictionary["hiddenUntilDiscovered"] as? Bool {
+            hiddenUntilDiscovered = hiddenUntilDiscoveredData
+        }
+        if let contentHiddenUntilDiscoveredData = dictionary["contentHiddenUntilDiscovered"] as? Bool {
+            contentHiddenUntilDiscovered = contentHiddenUntilDiscoveredData
+        }
         
         // build a coordinate from the latitide & longitude
         let coord = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
